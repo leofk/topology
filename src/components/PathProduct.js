@@ -44,11 +44,11 @@ const PathProduct = ({ s }) => {
     <group>
       <mesh ref={dotFG}>
         <sphereGeometry args={[0.015, 16, 16]} />
-        <meshStandardMaterial color={'red'} />
+        <meshPhongMaterial color={'red'} />
       </mesh>
       <line ref={lineFG}>
         <bufferGeometry />
-        <lineBasicMaterial color={'black'} linewidth={2} />
+        <lineBasicMaterial color={'red'} linewidth={2} />
       </line>
     </group>
   );

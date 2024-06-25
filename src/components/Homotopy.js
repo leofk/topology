@@ -56,9 +56,17 @@ const Homotopy = ({ s, t }) => {
 
   return (
     <group>
+      <mesh ref={dotRef3}>
+        <sphereGeometry args={[0.015, 16, 16]} />
+        <meshPhongMaterial color={'green'} />
+      </mesh>
+      <line ref={lineRef3}>
+        <bufferGeometry />
+        <lineBasicMaterial color={'green'} linewidth={2} />
+      </line>
       <mesh ref={dotRef1}>
         <sphereGeometry args={[0.015, 16, 16]} />
-        <meshStandardMaterial color={'red'} />
+        <meshPhongMaterial color={'red'} />
       </mesh>
       <line ref={lineRef1}>
         <bufferGeometry />
@@ -66,20 +74,13 @@ const Homotopy = ({ s, t }) => {
       </line>
       <mesh ref={dotRef2}>
         <sphereGeometry args={[0.015, 16, 16]} />
-        <meshStandardMaterial color={'green'} />
+        <meshPhongMaterial color={'blue'} />
       </mesh>
       <line ref={lineRef2}>
         <bufferGeometry />
-        <lineBasicMaterial color={'green'} linewidth={2} />
-      </line>
-      <mesh ref={dotRef3}>
-        <sphereGeometry args={[0.015, 16, 16]} />
-        <meshStandardMaterial color={'blue'} />
-      </mesh>
-      <line ref={lineRef3}>
-        <bufferGeometry />
         <lineBasicMaterial color={'blue'} linewidth={2} />
       </line>
+
     </group>
   );
 };

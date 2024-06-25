@@ -114,31 +114,31 @@ const Associativity = ({ s, t }) => {
     <group>
       <line ref={linefgHRef}>
         <bufferGeometry />
-        <lineBasicMaterial color={'black'} linewidth={2} />
+        <lineBasicMaterial color={'red'} linewidth={2} />
       </line>
       <mesh ref={dotfgHRef}>
         <sphereGeometry args={[0.015, 16, 16]} />
-        <meshStandardMaterial color={'red'} />
+        <meshPhongMaterial color={'red'} />
       </mesh>
       <line ref={lineFghRef}>
         <bufferGeometry />
-        <lineBasicMaterial color={'black'} linewidth={2} />
+        <lineBasicMaterial color={'red'} linewidth={2} />
       </line>
       <mesh ref={dotFghRef}>
         <sphereGeometry args={[0.015, 16, 16]} />
-        <meshStandardMaterial color={'blue'} />
+        <meshPhongMaterial color={'blue'} />
       </mesh>
       <mesh ref={dotH1Ref}>
         <sphereGeometry args={[0.015, 16, 16]} />
-        <meshStandardMaterial color={'black'} />
+        <meshPhongMaterial color={'lightgreen'} />
       </mesh>
       {/* <line ref={lineH1Ref}>
         <bufferGeometry />
-        <lineBasicMaterial color={'black'} linewidth={2} />
+        <lineBasicMaterial color={'red'} linewidth={2} />
       </line> */}
       <mesh ref={dotH2Ref}>
         <sphereGeometry args={[0.015, 16, 16]} />
-        <meshStandardMaterial color={'yellow'} />
+        <meshStandardMaterial color={'orange'} />
       </mesh>
       {/* <line ref={lineH2Ref}>
         <bufferGeometry />

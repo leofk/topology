@@ -54,7 +54,7 @@ const Inverse = ({ s, t }) => {
     let u = i/1000;
 
     ffinv_positions.push(loop_ffinv(u));
-    h1_positions.push(H1(u, t));
+    // h1_positions.push(H1(u, t));
   }
 	
   useFrame(() => {
@@ -62,7 +62,7 @@ const Inverse = ({ s, t }) => {
     const dot_c = dotCRef.current;
     const dot_h1 = dotH1Ref.current;
     const line_ffinv = lineFFINVRef.current;
-    const line_h1 = lineH1Ref.current;
+    // const line_h1 = lineH1Ref.current;
 
     // Update dot positions using the functions
     dot_c.position.copy(loop_constant());
@@ -71,31 +71,31 @@ const Inverse = ({ s, t }) => {
 
     // Update the line geometry with the new positions
     line_ffinv.geometry.setFromPoints(ffinv_positions);
-    line_h1.geometry.setFromPoints(h1_positions);
+    // line_h1.geometry.setFromPoints(h1_positions);
   });
 
   return (
     <group>
       <mesh ref={dotCRef}>
         <sphereGeometry args={[0.015, 16, 16]} />
-        <meshStandardMaterial color={'red'} />
+        <meshPhongMaterial color={'blue'} />
       </mesh>
       <mesh ref={dotFFINVRef}>
         <sphereGeometry args={[0.015, 16, 16]} />
-        <meshStandardMaterial color={'blue'} />
+        <meshPhongMaterial color={'red'} />
       </mesh>
       <line ref={lineFFINVRef}>
         <bufferGeometry />
-        <lineBasicMaterial color={'blue'} linewidth={2} />
+        <lineBasicMaterial color={'red'} linewidth={2} />
       </line>
       <mesh ref={dotH1Ref}>
         <sphereGeometry args={[0.015, 16, 16]} />
-        <meshStandardMaterial color={'black'} />
+        <meshPhongMaterial color={'orange'} />
       </mesh>
-      <line ref={lineH1Ref}>
+      {/* <line ref={lineH1Ref}>
         <bufferGeometry />
-        <lineBasicMaterial color={'black'} linewidth={2} />
-      </line>
+        <lineBasicMaterial color={'red'} linewidth={2} />
+      </line> */}
     </group>
   );
 };

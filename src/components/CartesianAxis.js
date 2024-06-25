@@ -10,9 +10,9 @@ export const CartesianAxis = () => {
   const zAxis = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 0, -10), new THREE.Vector3(0, 0, 10)]);
 
   // Define axis line colors
-  const axisMaterialX = new THREE.LineBasicMaterial({ color: 'red' }); // Red
-  const axisMaterialY = new THREE.LineBasicMaterial({ color: 'green' }); // Green
-  const axisMaterialZ = new THREE.LineBasicMaterial({ color: 'blue' }); // Blue
+  const axisMaterialX = new THREE.LineBasicMaterial({ color: 'black' }); // Red
+  const axisMaterialY = new THREE.LineBasicMaterial({ color: 'black' }); // Green
+  const axisMaterialZ = new THREE.LineBasicMaterial({ color: 'black' }); // Blue
 
   return (
     <group ref={axesRef}>

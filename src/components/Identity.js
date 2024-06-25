@@ -33,7 +33,7 @@ const Identity = ({ s, t }) => {
     if (s <= 1/2) {
       return loop_f(2*s);
     } else {
-      return loop_constant;
+      return loop_constant();
     }
   };
 
@@ -62,24 +62,24 @@ const Identity = ({ s, t }) => {
     const u = (i / 1000);
     f_positions.push(loop_f(u));
     fc_positions.push(loop_fc(u));
-    h1_positions.push(H1(u, t));
-    h2_positions.push(H2(u, t));
+    // h1_positions.push(H1(u, t));
+    // h2_positions.push(H2(u, t));
   }
 	
   useFrame(() => {
     const dot_f = dotFRef.current;
-    const dot_c = dotCRef.current;
+    // const dot_c = dotCRef.current;
     const dot_fc = dotFCRef.current;
     const dot_h1 = dotH1Ref.current;
     const dot_h2 = dotH2Ref.current;
     const line_f = lineFRef.current;
     const line_fc = lineFCRef.current;
-    const line_h1 = lineH1Ref.current;
-    const line_h2 = lineH2Ref.current;
+    // const line_h1 = lineH1Ref.current;
+    // const line_h2 = lineH2Ref.current;
 
     // Update dot positions using the functions
     dot_f.position.copy(loop_f(s));
-    dot_c.position.copy(loop_constant());
+    // dot_c.position.copy(loop_constant());
     dot_fc.position.copy(loop_fc(s));
     dot_h1.position.copy(H1(s, t));
     dot_h2.position.copy(H2(s, t));
@@ -87,24 +87,34 @@ const Identity = ({ s, t }) => {
     // Update the line geometry with the new positions
     line_f.geometry.setFromPoints(f_positions);
     line_fc.geometry.setFromPoints(fc_positions);
-    line_h1.geometry.setFromPoints(h1_positions);
-    line_h2.geometry.setFromPoints(h2_positions);
+    // line_h1.geometry.setFromPoints(h1_positions);
+    // line_h2.geometry.setFromPoints(h2_positions);
   });
 
   return (
     <group>
-      <mesh ref={dotFRef}>
-        <sphereGeometry args={[0.015, 16, 16]} />
-        <meshStandardMaterial color={'red'} />
-      </mesh>
-      <line ref={lineFRef}>
-        <bufferGeometry />
-        <lineBasicMaterial color={'red'} linewidth={2} />
-      </line>
-      <mesh ref={dotCRef}>
+
+      {/* <mesh ref={dotCRef}>
         <sphereGeometry args={[0.015, 16, 16]} />
         <meshStandardMaterial color={'blue'} />
+      </mesh> */}
+
+      <mesh ref={dotH1Ref}>
+        <sphereGeometry args={[0.015, 16, 16]} />
+        <meshStandardMaterial color={'lightgreen'} />
       </mesh>
+      {/* <line ref={lineH1Ref}>
+        <bufferGeometry />
+        <lineBasicMaterial color={'red'} linewidth={2} />
+      </line> */}
+      <mesh ref={dotH2Ref}>
+        <sphereGeometry args={[0.015, 16, 16]} />
+        <meshStandardMaterial color={'orange'} />
+      </mesh>
+      {/* <line ref={lineH2Ref}>
+        <bufferGeometry />
+        <lineBasicMaterial color={'purple'} linewidth={2} />
+      </line> */}
       <mesh ref={dotFCRef}>
         <sphereGeometry args={[0.015, 16, 16]} />
         <meshStandardMaterial color={'red'} />
@@ -113,21 +123,13 @@ const Identity = ({ s, t }) => {
         <bufferGeometry />
         <lineBasicMaterial color={'red'} linewidth={2} />
       </line>
-      <mesh ref={dotH1Ref}>
+      <mesh ref={dotFRef}>
         <sphereGeometry args={[0.015, 16, 16]} />
-        <meshStandardMaterial color={'black'} />
+        <meshStandardMaterial color={'blue'} />
       </mesh>
-      <line ref={lineH1Ref}>
+      <line ref={lineFRef}>
         <bufferGeometry />
-        <lineBasicMaterial color={'black'} linewidth={2} />
-      </line>
-      <mesh ref={dotH2Ref}>
-        <sphereGeometry args={[0.015, 16, 16]} />
-        <meshStandardMaterial color={'purple'} />
-      </mesh>
-      <line ref={lineH2Ref}>
-        <bufferGeometry />
-        <lineBasicMaterial color={'purple'} linewidth={2} />
+        <lineBasicMaterial color={'red'} linewidth={2} />
       </line>
     </group>
   );
