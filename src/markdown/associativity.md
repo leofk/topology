@@ -6,18 +6,18 @@ an expression with the path concatenation operation with not change the result.
 $\\
 (f \cdot (g \cdot h)) (s) =
 \begin{cases}
-   f(2s) &s\in[0,\frac{1}{2}) \\
-   g(4s-2) &s\in[\frac{1}{2},\frac{3}{4}) \\
-   h(4s-3) &s\in[\frac{3}{4},1]
+   f(2s) &s\in\left[0,\frac{1}{2}\right) \\
+   g(4s-2) &s\in\left[\frac{1}{2},\frac{3}{4}\right) \\
+   h(4s-3) &s\in\left[\frac{3}{4},1\right]
 \end{cases}
 $
 
 $\\
 ((f \cdot g) \cdot h) (s) =
 \begin{cases}
-   f(4s) &s\in[0,\frac{1}{4}) \\
-   g(4s-1) &s\in[\frac{1}{4},\frac{1}{2}) \\
-   h(2s-1) &s\in[\frac{1}{2},1]
+   f(4s) &s\in\left[0,\frac{1}{4}\right) \\
+   g(4s-1) &s\in\left[\frac{1}{4},\frac{1}{2}\right) \\
+   h(2s-1) &s\in\left[\frac{1}{2},1\right]
 \end{cases}
 $
 
@@ -29,9 +29,9 @@ In particular, we would want to have $f$ go at half speed, $g$ to stay the same 
 $\\
 \varphi (s) =  
 \begin{cases}
-   \frac{s}{2} &s\in[0,\frac{1}{2}) \\
-   s - \frac{1}{4} &s\in[\frac{1}{2},\frac{3}{4}) \\
-   2s - 1 &s\in[\frac{3}{4},1] 
+   \frac{s}{2} &s\in\left[0,\frac{1}{2}\right) \\
+   s - \frac{1}{4} &s\in\left[\frac{1}{2},\frac{3}{4}\right) \\
+   2s - 1 &s\in\left[\frac{3}{4},1\right] 
 \end{cases}
 $
 
@@ -65,11 +65,7 @@ f \cdot (g \cdot h)
 \end{aligned}
 $
 
-And thus since $f \cdot (g \cdot h) \circ \varphi = f \cdot (g \cdot h)$, by the homotopy $f \cdot (g \cdot h) \circ H$ where
-
-$H(s,t):=(1-t)\varphi(s) + ts$
-
-We prove $f \cdot (g \cdot h) \simeq (f \cdot g) \cdot h$.
+And thus since $f \cdot (g \cdot h) \circ \varphi = f \cdot (g \cdot h)$, we show $f \cdot (g \cdot h) \simeq (f \cdot g) \cdot h$ by the homotopy $H = \left(f \cdot (g \cdot h)\right) \circ \varPhi$.
 
 #### Method 2
 

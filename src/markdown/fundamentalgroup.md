@@ -1,6 +1,6 @@
 ## The Fundamental Group
 
-The **fundamental group**, denoted $\pi_1(X,x_0)$, is the set of all homotopy classes $[f]$
+The **fundamental group**, denoted $\pi_1(X,x_0)$, is the set of all homotopy classes $\left[f\right]$
 of loops $f:I\mapsto X$ with basepoint $x_0$. 
 
 > *Proposition*: The fundamental group is a group under the path conatenation operation.
@@ -23,13 +23,13 @@ $
 (f \cdot e) (s) 
 &=  
 \begin{cases}
-   f(2s) &s\in[0,\frac{1}{2}) \\
-   e(2s-1) &s\in[\frac{1}{2},1] 
+   f(2s) &s\in\left[0,\frac{1}{2}\right) \\
+   e(2s-1) &s\in\left[\frac{1}{2},1\right] 
 \end{cases} 
 \\&=  
 \begin{cases}
-   f(2s) &s\in[0,\frac{1}{2}) \\
-   x_0 &s\in[\frac{1}{2},1] 
+   f(2s) &s\in\left[0,\frac{1}{2}\right) \\
+   x_0 &s\in\left[\frac{1}{2},1\right] 
 \end{cases}
 \end{aligned}
 $
@@ -39,19 +39,21 @@ $
 One was in which to define the neccessary path homotopy is to observe that $f \cdot e$ is a **reparameterization** of $f$.
 
 A **reparameterization** of $f$ is the composition $f\circ \varphi$ where $\varphi:I\mapsto I$ is any continuous map such that $\varphi(0)=0$ and $\varphi(1)=1$. This is valuable as a reparameterization of a path preserves it's homotopy class; in that $f\circ \varphi \simeq f$. 
-This is given by the homotopy $f \circ H$ where 
+This is given by the homotopy $H = f \circ \varPhi$.
 
-$H(s,t):=(1-t)\varphi(s) + ts$
+$
+\varPhi(s,t) :=(1-t)\varphi(s) + ts
+$
 
-Thus, in our case, if we were able to define $\varphi$ such that $f\circ \varphi = f \cdot e$, then $f \cdot e \simeq f$ will be trivial by $f\circ \varphi \simeq f$.
+Thus, in our case, if we were able to define $\varphi$ such that $f\circ \varphi = f \cdot e$, then $f \cdot e \simeq f$ will be trivial by $H$.
 
 Well, by observation, $f \cdot e$ is essentially the loop in which we do $f$ at twice speed. So let us define $\varphi$ that would make $f$ achieve this:
 
 $\\
 \varphi (s) =  
 \begin{cases}
-   2s &s\in[0,\frac{1}{2}) \\
-   1 &s\in[\frac{1}{2},1] 
+   2s &s\in\left[0,\frac{1}{2}\right) \\
+   1 &s\in\left[\frac{1}{2},1\right] 
 \end{cases}
 $
 
@@ -64,25 +66,25 @@ $
 f \circ \varphi 
 &= 
 \begin{cases}
-   f(\varphi(s)) &s\in[0,\frac{1}{2}) \\
-   f(\varphi(s)) &s\in[\frac{1}{2},1] 
+   f(\varphi(s)) &s\in\left[0,\frac{1}{2}\right) \\
+   f(\varphi(s)) &s\in\left[\frac{1}{2},1\right] 
 \end{cases}
 \\&= 
 \begin{cases}
-   f(2s) &s\in[0,\frac{1}{2}) \\
-   f(1) &s\in[\frac{1}{2},1] 
+   f(2s) &s\in\left[0,\frac{1}{2}\right) \\
+   f(1) &s\in\left[\frac{1}{2},1\right] 
 \end{cases}
 \\&=
 \begin{cases}
-   f(2s) &s\in[0,\frac{1}{2}) \\
-   x_0 &s\in[\frac{1}{2},1] 
+   f(2s) &s\in\left[0,\frac{1}{2}\right) \\
+   x_0 &s\in\left[\frac{1}{2},1\right] 
 \end{cases}
 \\&=
 f \cdot e
 \end{aligned}
 $
 
-and so by the homotopy $f \circ H$ from earlier, we have $f \cdot e \simeq f$ as desired. 
+and so by the homotopy $H$ from earlier, we have $f \cdot e \simeq f$ as desired. 
 
 #### Method 2
 

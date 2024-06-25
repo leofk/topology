@@ -12,18 +12,18 @@ $
 (f \cdot \bar{f}) (s)
 &= 
 \begin{cases}
-   f(2s) &s\in[0,\frac{1}{2}) \\
-   \bar{f}(2s-1) &s\in[\frac{1}{2},1] 
+   f(2s) &s\in\left[0,\frac{1}{2}\right) \\
+   \bar{f}(2s-1) &s\in\left[\frac{1}{2},1\right] 
 \end{cases}
 \\&= 
 \begin{cases}
-   f(2s) &s\in[0,\frac{1}{2}) \\
-   f(1-(2s-1)) &s\in[\frac{1}{2},1] 
+   f(2s) &s\in\left[0,\frac{1}{2}\right) \\
+   f(1-(2s-1)) &s\in\left[\frac{1}{2},1\right] 
 \end{cases}
 \\&=
 \begin{cases}
-   f(2s) &s\in[0,\frac{1}{2}) \\
-   f(2-2s) &s\in[\frac{1}{2},1] 
+   f(2s) &s\in\left[0,\frac{1}{2}\right) \\
+   f(2-2s) &s\in\left[\frac{1}{2},1\right] 
 \end{cases}
 \end{aligned}
 $

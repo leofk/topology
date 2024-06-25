@@ -2,7 +2,7 @@
 
 > *Proposition*: The relation on paths which are homotopic is an equivalence relation.
 
-The **homotopy class** of a path $f$, denoted $[f]$, is the equivalence class of $f$ under a homotopy.
+The **homotopy class** of a path $f$, denoted $\left[f\right]$, is the equivalence class of $f$ under a homotopy.
 
 > *Proof*
 
@@ -46,8 +46,8 @@ So, for simplicity, let us define $C$ to take $A$ for the first half of the time
 $\\
 C(s,t) :=  
 \begin{cases}
-   A(s,2t) &t\in[0,\frac{1}{2}) \\
-   B(s,2t-1) &t\in[\frac{1}{2},1] 
+   A(s,2t) &t\in\left[0,\frac{1}{2}\right) \\
+   B(s,2t-1) &t\in\left[\frac{1}{2},1\right] 
 \end{cases}
 $
 

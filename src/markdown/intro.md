@@ -10,4 +10,10 @@ In this interactive exploration of the fundamental group, we begin by illustrati
 
 ## Loops
 
-A **path** in a space $X$ is defined by the map $f:I \mapsto X$ where $I$ is the unit interval $[0,1]$. A **loop** is path such that we restrict the start and end points to be the same; $f(0)=f(1)$. We denote this as $x_0$, also known as the **basepoint**.
+A **path** in a space $X$ is defined by the map 
+
+$f:\underset{s}{I} \mapsto \underset{f(s)}{X}$ 
+
+where $I$ is the unit interval $[0,1]$. 
+
+A **loop** is path such that we restrict the start and end points to be the same; $f(0)=f(1)$. We call this point the **basepoint**; denoted $x_0$.

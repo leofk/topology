@@ -1,8 +1,10 @@
 ## Homotopy
 
-A **homotopy** of paths is a continuous family of maps 
+A **homotopy** between paths $f$ and $g$ is a continuous family of maps 
 
-$H:I \times I \mapsto X$ such that,
+$H:\underset{s}{I} \times \underset{t}{I} \mapsto \underset{H(s,t)}{X}$ 
+
+such that
 
 $
 \begin{aligned}
@@ -13,14 +15,14 @@ H(s,1)&=g
 \end{aligned}
 $
 
-If there exists such a homotopy between paths $f$ and $g$, we say they are **homotopic** and denote $f \simeq g$.
+If there exists such a homotopy, we say the paths are **homotopic** and denote $f \simeq g$.
 
 Below we illustrate a homotopy between loops:
 $f: I \mapsto \reals^3$ in *red* and $g: I \mapsto \reals^3$ in *blue*.
 Observe how varying the *time* parameter illustrates a homotopy $H$ between the two loops (in *green*).
 Since $\reals^3$ is convex, $H$ is simply the convex combination 
 
-$H(s,t)=(1-t)f(s)+(t)g(s)$
+$H(s,t):=(1-t)f(s)+(t)g(s)$
 
 
 
