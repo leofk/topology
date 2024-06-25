@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-const Homotopy = ({ s, t }) => {
+const Class = ({ s, t }) => {
   const dotFRef = useRef();
   const lineFRef = useRef();
   const dotGRef = useRef();
@@ -140,4 +140,4 @@ const Homotopy = ({ s, t }) => {
   );
 };
 
-export default Homotopy;
+export default Class;
