@@ -8,11 +8,11 @@ const Inverse = ({ s, t }) => {
   const dotCRef = useRef();
   const dotH1Ref = useRef();
   const lineFFINVRef = useRef();
-  const lineH1Ref = useRef();
+  // const lineH1Ref = useRef();
 
   let numPoints = Math.floor(s * 1000); // number of points based on slider value
   const ffinv_positions = [];
-  const h1_positions = [];
+  // const h1_positions = [];
 
   const loop_f = (s) => {
     const angle = s * Math.PI * 2;

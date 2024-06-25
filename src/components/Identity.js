@@ -5,20 +5,20 @@ import * as THREE from 'three';
 const Identity = ({ s, t }) => {
 
   const dotFRef = useRef();
-  const dotCRef = useRef();
+  // const dotCRef = useRef();
   const dotFCRef = useRef();
   const dotH1Ref = useRef();
   const dotH2Ref = useRef();
   const lineFRef = useRef();
   const lineFCRef = useRef();
-  const lineH1Ref = useRef();
-  const lineH2Ref = useRef();
+  // const lineH1Ref = useRef();
+  // const lineH2Ref = useRef();
 
   const numPoints = Math.floor(s * 1000); // number of points based on slider value
   const f_positions = [];
   const fc_positions = [];
-  const h1_positions = [];
-  const h2_positions = [];
+  // const h1_positions = [];
+  // const h2_positions = [];
 
   const loop_f = (s) => {
     const angle = s * Math.PI * 2;

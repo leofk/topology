@@ -10,8 +10,8 @@ const Associativity = ({ s, t }) => {
   const dotH2Ref = useRef();
   const linefgHRef = useRef();
   const lineFghRef = useRef();
-  const lineH1Ref = useRef();
-  const lineH2Ref = useRef();
+  // const lineH1Ref = useRef();
+  // const lineH2Ref = useRef();
 
   const numPoints = Math.floor(s * 1000); // number of points based on slider value
   const fgH_positions = [];
