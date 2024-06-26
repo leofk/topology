@@ -112,25 +112,10 @@ const Associativity = ({ s, t }) => {
 
   return (
     <group>
-      <line ref={linefgHRef}>
-        <bufferGeometry />
-        <lineBasicMaterial color={'red'} linewidth={2} />
-      </line>
-      <mesh ref={dotfgHRef}>
-        <sphereGeometry args={[0.015, 16, 16]} />
-        <meshPhongMaterial color={'red'} />
-      </mesh>
-      <line ref={lineFghRef}>
-        <bufferGeometry />
-        <lineBasicMaterial color={'red'} linewidth={2} />
-      </line>
-      <mesh ref={dotFghRef}>
-        <sphereGeometry args={[0.015, 16, 16]} />
-        <meshPhongMaterial color={'blue'} />
-      </mesh>
+
       <mesh ref={dotH1Ref}>
         <sphereGeometry args={[0.015, 16, 16]} />
-        <meshPhongMaterial color={'lightgreen'} />
+        <meshStandardMaterial color={'#1cff8e'} />
       </mesh>
       {/* <line ref={lineH1Ref}>
         <bufferGeometry />
@@ -138,12 +123,28 @@ const Associativity = ({ s, t }) => {
       </line> */}
       <mesh ref={dotH2Ref}>
         <sphereGeometry args={[0.015, 16, 16]} />
-        <meshStandardMaterial color={'orange'} />
+        <meshStandardMaterial color={'#ffe51c'} />
       </mesh>
       {/* <line ref={lineH2Ref}>
         <bufferGeometry />
         <lineBasicMaterial color={'yellow'} linewidth={2} />
       </line> */}
+      <mesh ref={dotFghRef}>
+        <sphereGeometry args={[0.015, 16, 16]} />
+        <meshPhongMaterial color={'blue'} />
+      </mesh>
+      <line ref={lineFghRef}>
+        <bufferGeometry />
+        <lineBasicMaterial color={'blue'} linewidth={2} />
+      </line>
+      <mesh ref={dotfgHRef}>
+        <sphereGeometry args={[0.015, 16, 16]} />
+        <meshPhongMaterial color={'red'} />
+      </mesh>
+      <line ref={linefgHRef}>
+        <bufferGeometry />
+        <lineBasicMaterial color={'red'} linewidth={2} />
+      </line>
     </group>
   );
 };

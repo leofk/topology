@@ -76,6 +76,15 @@ const Inverse = ({ s, t }) => {
 
   return (
     <group>
+
+      <mesh ref={dotH1Ref}>
+        <sphereGeometry args={[0.015, 16, 16]} />
+        <meshPhongMaterial color={'#ffe51c'} />
+      </mesh>
+      {/* <line ref={lineH1Ref}>
+        <bufferGeometry />
+        <lineBasicMaterial color={'red'} linewidth={2} />
+      </line> */}
       <mesh ref={dotCRef}>
         <sphereGeometry args={[0.015, 16, 16]} />
         <meshPhongMaterial color={'blue'} />
@@ -88,14 +97,6 @@ const Inverse = ({ s, t }) => {
         <bufferGeometry />
         <lineBasicMaterial color={'red'} linewidth={2} />
       </line>
-      <mesh ref={dotH1Ref}>
-        <sphereGeometry args={[0.015, 16, 16]} />
-        <meshPhongMaterial color={'orange'} />
-      </mesh>
-      {/* <line ref={lineH1Ref}>
-        <bufferGeometry />
-        <lineBasicMaterial color={'red'} linewidth={2} />
-      </line> */}
     </group>
   );
 };

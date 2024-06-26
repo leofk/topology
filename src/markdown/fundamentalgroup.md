@@ -92,3 +92,7 @@ Another way in which to define a homotopy $H$ for these loops is observe the int
 variables $s$ and $t$ on $I \times I$.
 
 # TODO
+
+We illustrate such maps below.
+
+We have two loops: $f \cdot e$ in *red*, and $f$ in *blue*. The homotopy computed using method 1 is in *green*, and the homotopy computed using method 2 is in *yellow*.

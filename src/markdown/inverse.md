@@ -29,3 +29,7 @@ $
 $
 
 # TODO
+
+We illustrate such maps below.
+
+We have two loops: $f \cdot \bar{f}$ in *red*, and $e$ in *blue*. And the desired homotopy between them is in *yellow*
