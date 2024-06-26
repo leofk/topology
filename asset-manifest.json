@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/topology/static/css/main.9a9b2e3e.css",
-    "main.js": "/topology/static/js/main.f68b4f84.js",
-    "static/js/747.98662949.chunk.js": "/topology/static/js/747.98662949.chunk.js",
+    "main.js": "/topology/static/js/main.d9911efa.js",
+    "static/js/747.1a968174.chunk.js": "/topology/static/js/747.1a968174.chunk.js",
     "static/js/223.d2b92e64.chunk.js": "/topology/static/js/223.d2b92e64.chunk.js",
-    "static/js/281.8971a9da.chunk.js": "/topology/static/js/281.8971a9da.chunk.js",
+    "static/js/281.2f456dea.chunk.js": "/topology/static/js/281.2f456dea.chunk.js",
     "static/js/744.c3da582b.chunk.js": "/topology/static/js/744.c3da582b.chunk.js",
     "static/js/349.6d6acdc7.chunk.js": "/topology/static/js/349.6d6acdc7.chunk.js",
-    "static/js/983.b37eca12.chunk.js": "/topology/static/js/983.b37eca12.chunk.js",
+    "static/js/983.a527c67c.chunk.js": "/topology/static/js/983.a527c67c.chunk.js",
     "static/js/516.025fed16.chunk.js": "/topology/static/js/516.025fed16.chunk.js",
     "static/js/453.be80cf1e.chunk.js": "/topology/static/js/453.be80cf1e.chunk.js",
     "static/media/KaTeX_AMS-Regular.ttf": "/topology/static/media/KaTeX_AMS-Regular.853be92419a6c3766b9a.ttf",
@@ -70,20 +70,20 @@
     "static/media/KaTeX_Size4-Regular.woff2": "/topology/static/media/KaTeX_Size4-Regular.e418bf257af1052628d8.woff2",
     "static/media/KaTeX_Size3-Regular.woff": "/topology/static/media/KaTeX_Size3-Regular.7947224e8a9914fa332b.woff",
     "static/media/KaTeX_Size3-Regular.woff2": "/topology/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
-    "static/media/fundamentalgroup.md": "/topology/static/media/fundamentalgroup.a3776af6fe7c128760a5.md",
-    "static/media/associativity.md": "/topology/static/media/associativity.a870d8ec53bb62086846.md",
+    "static/media/fundamentalgroup.md": "/topology/static/media/fundamentalgroup.51cd55a9ef7070b8b412.md",
+    "static/media/associativity.md": "/topology/static/media/associativity.f87b68bfea7d2dfb393e.md",
     "static/media/class.md": "/topology/static/media/class.7c31d48e828d3a7bce15.md",
-    "static/media/inverse.md": "/topology/static/media/inverse.e7e13d63144068a9722f.md",
+    "static/media/inverse.md": "/topology/static/media/inverse.4eb7b17c5427d233ddfe.md",
     "static/media/intro.md": "/topology/static/media/intro.eb577a4169041bc13b6c.md",
-    "index.html": "/topology/index.html",
     "static/media/homotopy.md": "/topology/static/media/homotopy.adfd653158507419e7c9.md",
+    "index.html": "/topology/index.html",
     "static/media/product.md": "/topology/static/media/product.f69e233979006d89b600.md",
     "main.9a9b2e3e.css.map": "/topology/static/css/main.9a9b2e3e.css.map",
-    "main.f68b4f84.js.map": "/topology/static/js/main.f68b4f84.js.map",
+    "main.d9911efa.js.map": "/topology/static/js/main.d9911efa.js.map",
     "453.be80cf1e.chunk.js.map": "/topology/static/js/453.be80cf1e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9a9b2e3e.css",
-    "static/js/main.f68b4f84.js"
+    "static/js/main.d9911efa.js"
   ]
 }
