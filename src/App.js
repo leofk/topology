@@ -12,6 +12,10 @@ import PathProduct from './components/PathProduct';
 import Identity from './components/Identity';
 import Inverse from './components/Inverse';
 import Associativity from './components/Associativity';
+import AxiomScene from './components/AxiomScene';
+import IdentityH2 from './components/IdentityH2';
+import InverseH2 from './components/InverseH2';
+import AssociH2 from './components/AssociH2';
 
 function App() {
   return (
@@ -44,19 +48,19 @@ function App() {
         <Markdown fileName='fundamentalgroup' />
       </Element>
       <Element name="tjs" className="section" id="tjs">
-        <ThreeScene Component={Identity} hasSecondSlider />
+        <AxiomScene Axiom={Identity} H2={IdentityH2} />
       </Element>
       <Element name="md" className="section" id="md">
         <Markdown fileName='inverse' />
       </Element>
       <Element name="tjs" className="section" id="tjs">
-        <ThreeScene Component={Inverse} hasSecondSlider />
+      <AxiomScene Axiom={Inverse} H2={InverseH2} />
       </Element>
       <Element name="md" className="section" id="md">
         <Markdown fileName='associativity' />
       </Element>
       <Element name="tjs" className="section" id="tjs">
-        <ThreeScene Component={Associativity} hasSecondSlider />
+      <AxiomScene Axiom={Associativity} H2={AssociH2} />
       </Element>
     </div>
   );
