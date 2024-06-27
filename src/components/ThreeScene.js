@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import { CartesianAxis } from './CartesianAxis';
+import { CartesianAxis } from './Scenes/CartesianAxis';
 
 const ThreeScene = ({ Component, hasSecondSlider = false }) => {
   const [sliderValueS, setSliderValueS] = useState(0);

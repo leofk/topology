@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import { CartesianAxis } from './CartesianAxis';
+import { CartesianAxis } from './Scenes/CartesianAxis';
 
 const CustomCamera = () => {
 	const { camera, gl } = useThree();
