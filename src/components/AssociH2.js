@@ -64,7 +64,7 @@ const AssociH2 = ({ s, t }) => {
         <bufferGeometry />
         <lineBasicMaterial color={'black'} linewidth={2} />
       </line>
-	  <Html position={[-0.55, 0, 0.55]} center>
+	  <Html position={[-0.55, 0, 0.57]} center>
         <Markdown markdownContent="$0$" />
       </Html>
       <Html position={[-0, 0, 0.57]} center>

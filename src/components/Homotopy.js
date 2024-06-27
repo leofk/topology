@@ -64,14 +64,7 @@ const Homotopy = ({ s, t }) => {
         <bufferGeometry />
         <lineBasicMaterial color={'green'} linewidth={2} />
       </line>
-      <mesh ref={dotRef1}>
-        <sphereGeometry args={[0.015, 16, 16]} />
-        <meshPhongMaterial color={'red'} />
-      </mesh>
-      <line ref={lineRef1}>
-        <bufferGeometry />
-        <lineBasicMaterial color={'red'} linewidth={2} />
-      </line>
+
       <mesh ref={dotRef2}>
         <sphereGeometry args={[0.015, 16, 16]} />
         <meshPhongMaterial color={'blue'} />
@@ -80,7 +73,14 @@ const Homotopy = ({ s, t }) => {
         <bufferGeometry />
         <lineBasicMaterial color={'blue'} linewidth={2} />
       </line>
-
+      <mesh ref={dotRef1}>
+        <sphereGeometry args={[0.015, 16, 16]} />
+        <meshPhongMaterial color={'red'} />
+      </mesh>
+      <line ref={lineRef1}>
+        <bufferGeometry />
+        <lineBasicMaterial color={'red'} linewidth={2} />
+      </line>
     </group>
   );
 };

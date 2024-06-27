@@ -112,14 +112,6 @@ const Class = ({ s, t }) => {
         <bufferGeometry />
         <lineBasicMaterial color={'darkorange'} linewidth={2} />
       </line>
-      <mesh ref={dotFRef}>
-        <sphereGeometry args={[0.015, 16, 16]} />
-        <meshPhongMaterial color={'red'} />
-      </mesh>
-      <line ref={lineFRef}>
-        <bufferGeometry />
-        <lineBasicMaterial color={'red'} linewidth={2} />
-      </line>
       <mesh ref={dotGRef}>
         <sphereGeometry args={[0.015, 16, 16]} />
         <meshPhongMaterial color={'blue'} />
@@ -135,6 +127,14 @@ const Class = ({ s, t }) => {
       <line ref={lineHRef}>
         <bufferGeometry />
         <lineBasicMaterial color={'orange'} linewidth={2} />
+      </line>
+      <mesh ref={dotFRef}>
+        <sphereGeometry args={[0.015, 16, 16]} />
+        <meshPhongMaterial color={'red'} />
+      </mesh>
+      <line ref={lineFRef}>
+        <bufferGeometry />
+        <lineBasicMaterial color={'red'} linewidth={2} />
       </line>
     </group>
   );

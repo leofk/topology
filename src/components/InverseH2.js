@@ -52,10 +52,10 @@ const InverseH2 = ({ s, t }) => {
         <bufferGeometry />
         <lineBasicMaterial color={'black'} linewidth={2} />
       </line>
-	  <Html position={[-0.55, 0, 0.55]} center>
+	  <Html position={[-0.55, 0, 0.57]} center>
         <Markdown markdownContent="$0$" />
       </Html>
-      <Html position={[-0, 0, 0.55]} center>
+      <Html position={[-0, 0, 0.57]} center>
         <Markdown markdownContent="$\frac{1}{2}$" />
       </Html>
       <Html position={[-.55, 0, -0]} center>
@@ -64,19 +64,19 @@ const InverseH2 = ({ s, t }) => {
       <Html position={[-.55, 0, -0.5]} center>
         <Markdown markdownContent="$1$" />
       </Html>
-	  <Html position={[.5, 0, 0.55]} center>
+	  <Html position={[.5, 0, 0.57]} center>
         <Markdown markdownContent="$1$" />
       </Html>
 	  <Html position={[0.6, 0, -0.6]} center>
         <Markdown markdownContent="### $H(s,t)$" />
       </Html>
-	  <Html position={[-0, 0, -0.55]} center>
+	  <Html position={[-0, 0, -0.57]} center>
         <Markdown markdownContent="#### $e$" />
       </Html>
-	  <Html position={[-.25, 0, .55]} center>
+	  <Html position={[-.25, 0, .57]} center>
         <Markdown markdownContent="#### $f$" />
       </Html>
-	  <Html position={[.25, 0, .55]} center>
+	  <Html position={[.25, 0, .57]} center>
         <Markdown markdownContent="#### $\bar{f}$" />
       </Html>
     </group>
