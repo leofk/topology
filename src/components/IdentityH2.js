@@ -8,7 +8,6 @@ const IdentityH2 = ({ s, t }) => {
   const dotRef = useRef();
   const squareRef = useRef();
   const lineRef = useRef();
-  const staticLineRef = useRef();
 
   const square = [
     new THREE.Vector3(-0.5, 0, -0.5),

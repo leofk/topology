@@ -55,7 +55,7 @@ const Associativity = ({ s, t }) => {
   };
 
   const phi = (s) => {
-    if (s < 1/2) {
+    if (s <= 1/2) {
       return s/2;
     } else if (s <= 3/4) {
       return s - 1/4;

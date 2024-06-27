@@ -16,6 +16,8 @@ import AxiomScene from './components/AxiomScene';
 import IdentityH2 from './components/IdentityH2';
 import InverseH2 from './components/InverseH2';
 import AssociH2 from './components/AssociH2';
+import IdentityH1 from './components/IdentityH1';
+import AssociH1 from './components/AssociH1';
 
 function App() {
   return (
@@ -48,7 +50,7 @@ function App() {
         <Markdown fileName='fundamentalgroup' />
       </Element>
       <Element name="tjs" className="section" id="tjs">
-        <AxiomScene Axiom={Identity} H2={IdentityH2} />
+        <AxiomScene Axiom={Identity} H2={IdentityH2} H1={IdentityH1} />
       </Element>
       <Element name="md" className="section" id="md">
         <Markdown fileName='inverse' />
@@ -60,7 +62,7 @@ function App() {
         <Markdown fileName='associativity' />
       </Element>
       <Element name="tjs" className="section" id="tjs">
-      <AxiomScene Axiom={Associativity} H2={AssociH2} />
+      <AxiomScene Axiom={Associativity} H2={AssociH2} H1={AssociH1} />
       </Element>
     </div>
   );

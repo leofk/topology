@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { CartesianAxis } from './CartesianAxis';
-import Square from './IdentityH2';
-import Identity from './Identity';
 
 const CustomCamera = () => {
 	const { camera, gl } = useThree();
@@ -27,7 +25,7 @@ const CustomCamera = () => {
 	return null;
   };
 
-const AxiomScene = ({ Axiom, H1, H2 }) => {
+const AxiomScene = ({ Axiom, H2, H1 = false }) => {
   const [sliderValueS, setSliderValueS] = useState(0);
   const [sliderValueT, setSliderValueT] = useState(0);
 
@@ -43,10 +41,9 @@ const AxiomScene = ({ Axiom, H1, H2 }) => {
     position: 'relative',
     width: '45vmin',
     height: '45vmin',
-	position: 'absolute', 
-	top: '0%', 
-	right: '0%', 
-	Index: 10, 
+    position: 'absolute', 
+    right: '0%', 
+    Index: 10, 
 	// boxShadow: '1px 1px 5px 3px #ffffff'
   };
 
@@ -62,13 +59,24 @@ const AxiomScene = ({ Axiom, H1, H2 }) => {
         </Canvas>
       </div>
 
-      <div style={{ ...squareCanvasStyle}}>
+
+      <div style={{ ...squareCanvasStyle, top: '0%'}}>
         <Canvas camera={{ fov: 75, position: [0, 1, 0] }}>
           <CustomCamera />
           <ambientLight intensity={1} />
           <H2 s={sliderValueS} t={sliderValueT} />
         </Canvas>
       </div>
+      
+      {H1 && (
+        <div style={{ ...squareCanvasStyle, bottom: '12%'}}>
+          <Canvas camera={{ fov: 75, position: [0, 1, 0] }}>
+            <CustomCamera />
+            <ambientLight intensity={1} />
+            <H1 s={sliderValueS} />
+          </Canvas>
+        </div>
+      )}
 
       <div style={{ width: '80%', margin: '10px 0' }}>
         <label htmlFor="sliderS">Distance (s):</label>
