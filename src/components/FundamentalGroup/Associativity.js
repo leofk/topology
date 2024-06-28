@@ -115,7 +115,7 @@ const Associativity = ({ s, t }) => {
 
       <mesh ref={dotH1Ref}>
         <sphereGeometry args={[0.015, 16, 16]} />
-        <meshStandardMaterial color={'#1cff8e'} />
+        <meshPhongMaterial color={'#1cff8e'} />
       </mesh>
       {/* <line ref={lineH1Ref}>
         <bufferGeometry />
@@ -123,7 +123,7 @@ const Associativity = ({ s, t }) => {
       </line> */}
       <mesh ref={dotH2Ref}>
         <sphereGeometry args={[0.015, 16, 16]} />
-        <meshStandardMaterial color={'#ffe51c'} />
+        <meshPhongMaterial color={'#ffe51c'} />
       </mesh>
       {/* <line ref={lineH2Ref}>
         <bufferGeometry />

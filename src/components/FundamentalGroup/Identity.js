@@ -101,7 +101,7 @@ const Identity = ({ s, t }) => {
 
       <mesh ref={dotH1Ref}>
         <sphereGeometry args={[0.015, 16, 16]} />
-        <meshStandardMaterial color={'#1cff8e'} />
+        <meshPhongMaterial color={'#1cff8e'} />
       </mesh>
       {/* <line ref={lineH1Ref}>
         <bufferGeometry />
@@ -109,7 +109,7 @@ const Identity = ({ s, t }) => {
       </line> */}
       <mesh ref={dotH2Ref}>
         <sphereGeometry args={[0.015, 16, 16]} />
-        <meshStandardMaterial color={'#ffe51c'} />
+        <meshPhongMaterial color={'#ffe51c'} />
       </mesh>
       {/* <line ref={lineH2Ref}>
         <bufferGeometry />
@@ -117,7 +117,7 @@ const Identity = ({ s, t }) => {
       </line> */}
       <mesh ref={dotFRef}>
         <sphereGeometry args={[0.015, 16, 16]} />
-        <meshStandardMaterial color={'blue'} />
+        <meshPhongMaterial color={'blue'} />
       </mesh>
       <line ref={lineFRef}>
         <bufferGeometry />
@@ -125,7 +125,7 @@ const Identity = ({ s, t }) => {
       </line>
       <mesh ref={dotFCRef}>
         <sphereGeometry args={[0.015, 16, 16]} />
-        <meshStandardMaterial color={'red'} />
+        <meshPhongMaterial color={'red'} />
       </mesh>
       <line ref={lineFCRef}>
         <bufferGeometry />
