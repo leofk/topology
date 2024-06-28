@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { CartesianAxis } from './Scenes/CartesianAxis';
@@ -58,7 +58,6 @@ const AxiomScene = ({ Axiom, H2, H1 = false }) => {
           <OrbitControls />
         </Canvas>
       </div>
-
 
       <div style={{ ...squareCanvasStyle, top: '0%'}}>
         <Canvas camera={{ fov: 75, position: [0, 1, 0] }}>

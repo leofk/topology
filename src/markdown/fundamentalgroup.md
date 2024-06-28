@@ -142,6 +142,4 @@ $
 
 Thus, since we have defined a Homotopy $H$ between $f \cdot e$ and $f$ where $H$ is continuous and all endpoint constraints are satisfied - we conclude $f \cdot e \simeq f$ as desired.
 
-We illustrate such maps below.
-
-We have two loops: $f \cdot e$ in *red*, and $f$ in *blue*. The homotopy computed using method 1 is in *green*, and the homotopy computed using method 2 is in *yellow*.
+In the illustration that follows, we have two loops: $f \cdot e$ in *red*, and $f$ in *blue*. The homotopy computed using method 1 is in *green*, and the homotopy computed using method 2 is in *yellow*.

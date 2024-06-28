@@ -68,8 +68,6 @@ H(s,t) =
 \end{cases}
 $
 
-And so we have defined a valid homotopy that satisfies the constraints, showing $f \cdot \bar{f} \simeq e$ as desired.
+And so we have defined a valid homotopy that satisfies the constraints, showing $f \cdot \bar{f} \simeq e$; as desired.
 
-We illustrate such maps below.
-
-We have two loops: $f \cdot \bar{f}$ in *red*, and $e$ in *blue*. And the desired homotopy between them is in *yellow*
+In the illustration that follows, we have two loops: $f \cdot \bar{f}$ in *red*, and $e$ in *blue*. And the desired homotopy between them is in *yellow*

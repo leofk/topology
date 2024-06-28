@@ -69,11 +69,44 @@ And thus since $f \cdot (g \cdot h) \circ \varphi = f \cdot (g \cdot h)$, we sho
 
 #### Method 2
 
-Another way in which to define a homotopy $H$ for these loops is observe the interaction between 
-variables $s$ and $t$ on $I \times I$.
+As with the other axioms, here we can also consider defining a homotopy by appealing to a decomposition of the unit square $I \times I$.
 
-# TODO
+Suppose we want $H$ such that
 
-We illustrate such maps below.
+$
+\begin{aligned}
+H(0,t)&= H(1,t) = x_0 \\
+H(s,0)&=f \cdot (g \cdot h)\\ 
+H(s,1)&=(f \cdot g) \cdot h
+\end{aligned}
+$
 
-We have two loops: $(f \cdot g) \cdot h$ in *red*, and $f \cdot (g \cdot h)$ in *blue*. The homotopy computed using method 1 is in *green*, and the homotopy computed using method 2 is in *yellow*.
+we can isolate each loop $f$, $g$, and $h$ by the following two lines
+
+$s=\frac{2-t}{4}$ and $s=\frac{3-t}{4}$
+
+and so plugging these bounds into the homotopy we have
+
+$\\
+H(s,t) =  
+\begin{cases}
+   f(...) &s\in\left[0,\frac{2-t}{4}\right) \\
+   g(...) &s\in\left[\frac{2-t}{4},\frac{3-t}{4}\right) \\
+   h(...) &s\in\left[\frac{3-t}{4},1\right] 
+\end{cases}
+$
+
+Now it remains to make $H$ continuous and satisfy the endpoint constraints. 
+
+$\\
+H(s,t) =  
+\begin{cases}
+   f\left(\frac{4s}{2-t}\right) &s\in\left[0,\frac{2-t}{4}\right) \\
+   g\left(4s+t-2\right) &s\in\left[\frac{2-t}{4},\frac{3-t}{4}\right) \\
+   h\left(\frac{4s+t-3}{1+t}\right) &s\in\left[\frac{3-t}{4},1\right] 
+\end{cases}
+$
+
+And thus we have a valid homotopy, showing $f \cdot (g \cdot h) \simeq (f \cdot g) \cdot h$; as desired.
+
+In the illustration that follows, we have two loops: $(f \cdot g) \cdot h$ in *red*, and $f \cdot (g \cdot h)$ in *blue*. The homotopy computed using method 1 is in *green*, and the homotopy computed using method 2 is in *yellow*.
