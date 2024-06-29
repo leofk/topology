@@ -42,7 +42,7 @@ A **reparameterization** of $f$ is the composition $f\circ \varphi$ where $\varp
 This is given by the homotopy $H = f \circ \varPhi$.
 
 $
-\varPhi(s,t) :=(1-t)\varphi(s) + ts
+\varPhi\left(s,t\right) :=(1-t)\varphi(s) + ts
 $
 
 Thus, in our case, if we were able to define $\varphi$ such that $f\circ \varphi = f \cdot e$, then $f \cdot e \simeq f$ will be trivial by $H$.
@@ -142,4 +142,4 @@ $
 
 Thus, since we have defined a Homotopy $H$ between $f \cdot e$ and $f$ where $H$ is continuous and all endpoint constraints are satisfied - we conclude $f \cdot e \simeq f$ as desired.
 
-In the illustration that follows, we have two loops: $f \cdot e$ in *red*, and $f$ in *blue*. The homotopy computed using method 1 is in *green*, and the homotopy computed using method 2 is in *yellow*.
+In the illustration that follows, we have two loops: $f \cdot e$ in *red*, and $f$ in *blue*. The loops that arise from the two homotopies we computed are in *green* and *yellow* for method 1 and method 2 respectively. Further, the graph in the top-right portray the interaction of $s$ and $t$ on the decomposed unit square $I \times I$. Observe how the loop transitions from $f$ to $e$ as it intersects with the line $s=\frac{t+1}{2}$. Similarly, we illustrate how $\varphi$ varies with $t$ for the homotopy $H = f \circ \varPhi$. Observe how, since $H$ goes between $f \circ \varphi = f \cdot e$ and $f$, $\varPhi\left(s,0\right)$ graphs $\varphi(s)$ and conversly $\varPhi\left(s,1\right)$ trivially graphs $s$.

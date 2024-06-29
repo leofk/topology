@@ -51,8 +51,6 @@ C(s,t) :=
 \end{cases}
 $
 
-We illustrate such maps below.
-
-The three loops are colored the primaries: $f$ as *red*, $g$ as *blue*, $h$ as *yellow*.
+In the illustration that follows, the three loops are colored the primaries: $f$ as *red*, $g$ as *blue*, $h$ as *yellow*.
 And the maps between the colors are their respective secondary colors: $A$ is *purple*, $B$ is *green*, $C$ is *orange*.
 In particular, when varying *time*, observe how $C$ does $A$ then $B$ in twice the speed.

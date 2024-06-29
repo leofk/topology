@@ -70,4 +70,4 @@ $
 
 And so we have defined a valid homotopy that satisfies the constraints, showing $f \cdot \bar{f} \simeq e$; as desired.
 
-In the illustration that follows, we have two loops: $f \cdot \bar{f}$ in *red*, and $e$ in *blue*. And the desired homotopy between them is in *yellow*
+In the illustration that follows, we have two loops: $f \cdot \bar{f}$ in *red*, and $e$ in *blue*. The computed homotopy between them is in *yellow* and we again portray the interaction of $s$ and $t$ on the decomposed unit square $I \times I$.

@@ -5,7 +5,7 @@ import PhiLabels from './GridHelpers/PhiLabels';
 import Square from './GridHelpers/Square';
 import GridLines from './GridHelpers/GridLines';
 
-const IdentityH1 = ({ s }) => {
+const IdentityH1 = ({ s, t }) => {
   const dotRef = useRef();
   const lineRef = useRef();
 
@@ -17,19 +17,29 @@ const IdentityH1 = ({ s }) => {
     slopePoints.push(new THREE.Vector3(-0.5, 0, 0.5)); // start point
 
     // Update dot position based on s and t values
-    let t;
+    let u;
+    let tp = 1-t;
 
     if (s <= 1/2) {
-      t = 2 * s;
-      slopePoints.push(new THREE.Vector3(s - 0.5, 0, 0.5 - t)); // single segment
+      u = 2 * s;
+      u *= tp;
+      u += t*s;
+      slopePoints.push(new THREE.Vector3(s - 0.5, 0, 0.5 - u)); // single segment
 
     } else {
-      t = 1;
-      slopePoints.push(new THREE.Vector3(0, 0, -0.5)); // first segment end
-      slopePoints.push(new THREE.Vector3(s - 0.5, 0, 0.5 - t)); // second segment end
+      u = 1;
+      u *= tp;
+      u += t*s;
+
+      let prev_s = (1/2);
+      let prev_u = 2 * prev_s * tp;
+      prev_u += t*prev_s
+      // slopePoints.push(new THREE.Vector3(0, 0, -0.5)); // first segment end
+      slopePoints.push(new THREE.Vector3(prev_s - 0.5, 0, 0.5 - prev_u)); // second segment end
+      slopePoints.push(new THREE.Vector3(s - 0.5, 0, 0.5 - u)); // second segment end
     }
 
-    dot.position.set(s - 0.5, 0, 0.5 - t);
+    dot.position.set(s - 0.5, 0, 0.5 - u);
 
     // Update the slope line geometry with the piecewise points
     lineRef.current.geometry.setFromPoints(slopePoints);

@@ -68,6 +68,9 @@ const AssociH2 = ({ s, t }) => {
       <Html position={[.375, 0, .57]} center>
         <Markdown markdownContent="#### $h$" />
       </Html>
+      <Html position={[.375, 0, .57]} center>
+        <Markdown markdownContent="#### $h$" />
+      </Html>
     </group>
   );
 };

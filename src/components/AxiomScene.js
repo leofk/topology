@@ -72,7 +72,7 @@ const AxiomScene = ({ Axiom, H2, H1 = false }) => {
           <Canvas camera={{ fov: 75, position: [0, 1, 0] }}>
             <CustomCamera />
             <ambientLight intensity={1} />
-            <H1 s={sliderValueS} />
+            <H1 s={sliderValueS} t={sliderValueT} />
           </Canvas>
         </div>
       )}

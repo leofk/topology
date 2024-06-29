@@ -6,7 +6,7 @@ import Markdown from '../../Markdown';
 const PhiLabels = () => {
   return (
     <>
-	{/* <Html position={[-0.55, 0, -0.5]} center>
+	    <Html position={[-0.55, 0, -0.5]} center>
         <Markdown markdownContent="$1$" />
       </Html>
       <Html position={[-0.55, 0, -0.25]} center>
@@ -17,7 +17,7 @@ const PhiLabels = () => {
       </Html>
       <Html position={[-0.55, 0, 0.25]} center>
         <Markdown markdownContent="$\frac{1}{4}$" />
-      </Html> */}
+      </Html>
       <Html position={[-0.55, 0, 0.57]} center>
         <Markdown markdownContent="$0$" />
       </Html>
@@ -34,8 +34,11 @@ const PhiLabels = () => {
         <Markdown markdownContent="$1$" />
       </Html>
       <Html position={[0.6, 0, -0.6]} center>
-        <Markdown markdownContent="### $\varphi$" />
+        <Markdown markdownContent="### $\varPhi\left(s,t\right)$" />
       </Html>
+      {/* <Html position={[0.3, 0, -0.6]} center>
+        <Markdown markdownContent="$(1-t)$" />
+      </Html> */}
     </>
   );
 };

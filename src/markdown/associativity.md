@@ -109,4 +109,4 @@ $
 
 And thus we have a valid homotopy, showing $f \cdot (g \cdot h) \simeq (f \cdot g) \cdot h$; as desired.
 
-In the illustration that follows, we have two loops: $(f \cdot g) \cdot h$ in *red*, and $f \cdot (g \cdot h)$ in *blue*. The homotopy computed using method 1 is in *green*, and the homotopy computed using method 2 is in *yellow*.
+In the illustration that follows, we have two loops: $(f \cdot g) \cdot h$ in *red*, and $f \cdot (g \cdot h)$ in *blue*. The homotopy computed using method 1 is in *green*, and the homotopy computed using method 2 is in *yellow*. And as with the identity axiom, we also illustrate $H(s,t)$ and $\varPhi\left(s,t\right)$ as they relate to their corresponding loops.
