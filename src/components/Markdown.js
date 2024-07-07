@@ -6,12 +6,12 @@ import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import '../css/MarkdownRenderer.css';
 
-const Markdown = ({ fileName, markdownContent }) => {
+const Markdown = ({ fileName, articleName, markdownContent }) => {
   const [content, setContent] = useState('');
 
   useEffect(() => {
     if (fileName) {
-      import(`../markdown/${fileName}.md`)
+      import(`../${articleName}_md/${fileName}.md`)
         .then((file) => fetch(file.default))
         .then((response) => response.text())
         .then((text) => setContent(text));
