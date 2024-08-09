@@ -5,7 +5,7 @@ import { CartesianAxis } from './Scenes/CartesianAxis';
 import Slider from '@mui/material/Slider';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import StraightenIcon from '@mui/icons-material/Straighten';
+import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import { ReactComponent as MIcon } from '../other/icons/letter-m.svg'; // Adjust the import path
 import { ReactComponent as NIcon } from '../other/icons/letter-n.svg'; // Adjust the import path
@@ -78,12 +78,14 @@ const ThreeScene = ({ Component, hasSecondSlider = false, hasIntegerChoice = fal
         <hemisphereLight args={['white', 'blue', 1]} />
         <CartesianAxis />
         <Component s={sliderValueS} t={sliderValueT} n={integerValue} m={integerValueM}/>
-        <OrbitControls />
+        <OrbitControls 
+          maxDistance={9.5} // Maximum zoom distance
+        />
       </Canvas>
       <Box sx={{ width: '80%', margin: '10px 0' }}>
         {/* <Typography gutterBottom>Distance (s):</Typography> */}
         <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
-          <StraightenIcon />
+          <DirectionsRunIcon />
           <Slider value={sliderValueS} min={0} max={1} step={0.01} onChange={handleSliderChangeS} aria-labelledby="sliderS" marks={marks} />
         </Stack>
 
@@ -95,6 +97,24 @@ const ThreeScene = ({ Component, hasSecondSlider = false, hasIntegerChoice = fal
             <AccessTimeIcon />
             <Slider value={sliderValueT} min={0} max={1} step={0.01} onChange={handleSliderChangeT} aria-labelledby="sliderT" marks={marks}/>
           </Stack>
+        </Box>
+      )}
+      {hasIntegerChoice && 
+      hasSecondInteger &&
+      (
+        <Box sx={{ width: '80%', margin: '10px 0' }}>
+          <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
+          <MIcon style={{ width: 24, height: 24 }} />
+          <Slider
+              value={integerValueM}
+              min={-5}  // Adjust these values as needed
+              max={5}
+              step={1}
+              onChange={handleIntegerChangeM}
+              aria-labelledby="integerSliderM"
+              marks={marks_int}
+            />
+           </Stack>
         </Box>
       )}
       {hasIntegerChoice && (
@@ -109,25 +129,6 @@ const ThreeScene = ({ Component, hasSecondSlider = false, hasIntegerChoice = fal
               step={1}
               onChange={handleIntegerChange}
               aria-labelledby="integerSliderN"
-              marks={marks_int}
-            />
-           </Stack>
-        </Box>
-      )}
-
-      {hasIntegerChoice && 
-      hasSecondInteger &&
-      (
-        <Box sx={{ width: '80%', margin: '10px 0' }}>
-          <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
-          <MIcon style={{ width: 24, height: 24 }} />
-          <Slider
-              value={integerValueM}
-              min={-5}  // Adjust these values as needed
-              max={5}
-              step={1}
-              onChange={handleIntegerChangeM}
-              aria-labelledby="integerSliderM"
               marks={marks_int}
             />
            </Stack>

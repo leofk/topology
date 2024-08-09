@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import Helix from '../S1/Helix'; // Import the Helix component
@@ -6,10 +6,13 @@ import Helix from '../S1/Helix'; // Import the Helix component
 const Homomorphism = ({ s, n, m }) => {
   const wnRef = useRef();
   const wntildeRef = useRef();
-  const lineRef = useRef();
+  const loopRef = useRef();
+  const pathRef = useRef();
+  const projectRef = useRef();
 
   const numPoints = Math.floor(s * 1000); // number of points based on slider value
-  const positions = [];
+  const loop_pos = [];
+  const path_pos = [];
 
 
   // helix path
@@ -22,63 +25,34 @@ const Homomorphism = ({ s, n, m }) => {
     return new THREE.Vector3(x, y, z);
   };
 
-  // p : R -> S1
-  //     s -> (cos(2*pi*s), sin(2*pi*s))
-  // the covering map p maps a point on the real line to the circle S1
+
+  // covering map from R to S1
   const p = (s) => {
     const angle = 2 * Math.PI * s;
     return new THREE.Vector3(Math.cos(angle), 0, Math.sin(angle));
   };
 
-  // tau_m : R -> R
-  //       s -> s+m
-  // a path in R from 0 to n
+  // a translation on R by m
   const tau_m = (s) => {
     return s + m;
   };
 
-  // tau_m \circ w_n_tilde
-  // a path in R from m to n+m
-  const tau_w_n_tilde = (s) => {
-    return tau_m(w_n_tilde(s));
-  };
-
-  // w_n_tilde : I -> R
-  //             s -> ns
   // a path in R from 0 to n
   const w_n_tilde = (s) => {
     return n * s;
   };
 
-  // w_m_tilde : I -> R
-  //             s -> ms
   // a path in R from 0 to m
   const w_m_tilde = (s) => {
     return m * s;
   };
 
-  // w_n_tilde : I -> S1
-  //             s -> (cos(2*pi*n*s), sin(2*pi*n*s))
-  // a path in S1 
-  const w_n = (s) => {
-    return p(tau_w_n_tilde(s));
+  // a path in R from m to n+m
+  const tau_w_n_tilde = (s) => {
+    return tau_m(w_n_tilde(s));
   };
 
-  // w_m_tilde : I -> S1
-  //             s -> (cos(2*pi*m*s), sin(2*pi*m*s))
-  // a path in S1 
-  const w_m = (s) => {
-    return p(w_m_tilde(s));
-  };
-
-  const loop_mn = (s) => {
-    if (s <= 1/2) {
-      return w_m(2*s);
-    } else {
-      return w_n(2*s-1);
-    }
-  };
-
+  // a path in R from 0 to m+n. 
   const path_mn = (s) => {
     if (s <= 1/2) {
       return w_m_tilde(2*s);
@@ -87,24 +61,48 @@ const Homomorphism = ({ s, n, m }) => {
     }
   };
 
-  // Parameterize points onto the circle
+  // a loop in S1 that travels m times. 
+  const w_m = (s) => {
+    return p(w_m_tilde(s));
+  };
+
+  // a loop in S1 that travels from m to n+m (n times)
+  const w_nplusm = (s) => {
+    return p(tau_w_n_tilde(s));
+  };
+
+  // a loop in S1 that travels m+n times. 
+  const loop_mn = (s) => {
+    if (s <= 1/2) {
+      return w_m(2*s);
+    } else {
+      return w_nplusm(2*s-1);
+    }
+  };
+
   for (let i = 0; i <= numPoints; i++) {
     const u = (i / 1000);
-    positions.push(loop_mn(u));
+    loop_pos.push(loop_mn(u));
+    path_pos.push(helix(path_mn(u)));
   }
 
   useFrame(() => {
     const w_n_obj = wnRef.current;
     const w_n_tilde_obj = wntildeRef.current;
-    const line = lineRef.current;
+    const loop = loopRef.current;
+    const path = pathRef.current;
+    const project = projectRef.current;
 
     w_n_obj.position.copy(loop_mn(s));
     w_n_tilde_obj.position.copy(helix(path_mn(s)));
-    line.geometry.setFromPoints(positions);
+    loop.geometry.setFromPoints(loop_pos);
+    path.geometry.setFromPoints(path_pos);
+    project.geometry.setFromPoints([loop_mn(s), helix(path_mn(s))]);
   });
 
   return (
     <group>
+      <Helix />
       <mesh ref={wnRef}>
         <sphereGeometry args={[0.015, 16, 16]} />
         <meshPhongMaterial color={'red'} />
@@ -113,11 +111,18 @@ const Homomorphism = ({ s, n, m }) => {
         <sphereGeometry args={[0.015, 16, 16]} />
         <meshPhongMaterial color={'blue'} />
       </mesh>
-      <line ref={lineRef}>
+      <line ref={loopRef}>
         <bufferGeometry />
-        <lineBasicMaterial color={'red'} linewidth={2} />
+        <lineBasicMaterial color={'red'} />
       </line>
-      <Helix />
+      <line ref={pathRef}>
+        <bufferGeometry />
+        <lineBasicMaterial color={'blue'} />
+      </line>
+      <line ref={projectRef}>
+        <bufferGeometry />
+        <lineBasicMaterial color={'green'} />
+      </line>
     </group>
   );
 };

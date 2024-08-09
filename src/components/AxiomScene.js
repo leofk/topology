@@ -5,7 +5,7 @@ import { CartesianAxis } from './Scenes/CartesianAxis';
 import Slider from '@mui/material/Slider';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import StraightenIcon from '@mui/icons-material/Straighten';
+import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 
@@ -58,7 +58,9 @@ const AxiomScene = ({ Axiom, H2, H1 = false }) => {
           <hemisphereLight args={['white', 'blue', 1]} />
           <CartesianAxis />
           <Axiom s={sliderValueS} t={sliderValueT} />
-          <OrbitControls />
+          <OrbitControls 
+            maxDistance={9.5} // Maximum zoom distance
+          />
         </Canvas>
       </Box>
 
@@ -80,7 +82,7 @@ const AxiomScene = ({ Axiom, H2, H1 = false }) => {
 
       <Box sx={{ width: '80%', margin: '10px 0' }}>
         <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
-          <StraightenIcon />
+          <DirectionsRunIcon />
           <Slider
             value={sliderValueS}
             min={0}

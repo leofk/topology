@@ -6,10 +6,13 @@ import Helix from '../S1/Helix'; // Import the Helix component
 const CoveringMap = ({ s, n }) => {
   const wnRef = useRef();
   const wntildeRef = useRef();
-  const lineRef = useRef();
+  const loopRef = useRef();
+  const pathRef = useRef();
+  const projectRef = useRef();
 
   const numPoints = Math.floor(s * 1000); // number of points based on slider value
-  const positions = [];
+  const loop_pos = [];
+  const path_pos = [];
 
 
   // helix path
@@ -47,21 +50,27 @@ const CoveringMap = ({ s, n }) => {
   // Parameterize points onto the circle
   for (let i = 0; i <= numPoints; i++) {
     const u = (i / 1000);
-    positions.push(w_n(u));
+    loop_pos.push(w_n(u));
+    path_pos.push(helix(w_n_tilde(u)));
   }
 
   useFrame(() => {
     const w_n_obj = wnRef.current;
     const w_n_tilde_obj = wntildeRef.current;
-    const line = lineRef.current;
+    const loop = loopRef.current;
+    const path = pathRef.current;
+    const project = projectRef.current;
 
     w_n_obj.position.copy(w_n(s));
     w_n_tilde_obj.position.copy(helix(w_n_tilde(s)));
-    line.geometry.setFromPoints(positions);
+    loop.geometry.setFromPoints(loop_pos);
+    path.geometry.setFromPoints(path_pos);
+    project.geometry.setFromPoints([w_n(s), helix(w_n_tilde(s))]);
   });
 
   return (
     <group>
+      <Helix />
       <mesh ref={wnRef}>
         <sphereGeometry args={[0.015, 16, 16]} />
         <meshPhongMaterial color={'red'} />
@@ -70,11 +79,18 @@ const CoveringMap = ({ s, n }) => {
         <sphereGeometry args={[0.015, 16, 16]} />
         <meshPhongMaterial color={'blue'} />
       </mesh>
-      <line ref={lineRef}>
+      <line ref={loopRef}>
         <bufferGeometry />
-        <lineBasicMaterial color={'red'} linewidth={2} />
+        <lineBasicMaterial color={'red'} />
       </line>
-      <Helix />
+      <line ref={pathRef}>
+        <bufferGeometry />
+        <lineBasicMaterial color={'blue'} />
+      </line>
+      <line ref={projectRef}>
+        <bufferGeometry />
+        <lineBasicMaterial color={'green'} />
+      </line>
     </group>
   );
 };
