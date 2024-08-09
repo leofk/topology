@@ -1,7 +1,7 @@
 /* src/App.css */
 .App {
   font-family: sans-serif;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .section {
@@ -13,12 +13,13 @@
 }
 
 #md {
-  background-color: #f0f0f0;
+  /* background-color: #f0f0f0; */
 }
 
 #tjs {
   height: 100vh; /* This section retains full viewport height for the Three.js scene */
-  background-color: #e0e0e0;
+  /* background-color: #e0e0e0; */
 }
 
 
+/*  */

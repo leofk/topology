@@ -1,1 +1,0 @@
-# The Fundamental Group of $S^1$

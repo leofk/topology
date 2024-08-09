@@ -11,7 +11,7 @@ const Markdown = ({ fileName, articleName, markdownContent }) => {
 
   useEffect(() => {
     if (fileName) {
-      import(`../${articleName}_md/${fileName}.md`)
+      import(`../markdown/${articleName}_md/${fileName}.md`)
         .then((file) => fetch(file.default))
         .then((response) => response.text())
         .then((text) => setContent(text));
