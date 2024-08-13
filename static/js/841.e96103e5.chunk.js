@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkexperiment=self.webpackChunkexperiment||[]).push([[841],{4841:(e,a,p)=>{e.exports=p.p+"static/media/fundamentalgroup.47b37a1061bfe2a29642.md"}}]);
