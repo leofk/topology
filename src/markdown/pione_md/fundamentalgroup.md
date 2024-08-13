@@ -1,7 +1,7 @@
 ## The Fundamental Group
 
 The **fundamental group**, denoted $\pi_1(X,x_0)$, is the set of all homotopy classes $\left[f\right]$
-of loops $f:I\mapsto X$ with basepoint $x_0$. 
+of loops $f:I \to X$ with basepoint $x_0$. 
 
 > *Proposition*: The fundamental group is a group under the path conatenation operation.
 
@@ -14,8 +14,8 @@ of any two loops is defined.
 
 ### Identity: $f \cdot e \simeq f$
 
-Suppose we have some loop $f:I\mapsto X$ with basepoint $x_0$, let $e:I\mapsto X$ be the constant path
-defined by $e(s) = x_0$; or in other words, the identity element. We want to define a homotopy $H:I \times I \mapsto X$ between
+Suppose we have some loop $f:I \to X$ with basepoint $x_0$, let $e:I \to X$ be the constant path
+defined by $e(s) = x_0$; or in other words, the identity element. We want to define a homotopy $H:I \times I \to X$ between
 $f \cdot e$ and $f$ to show these two loops are homotopic.
 
 $
@@ -38,7 +38,7 @@ $
 
 One was in which to define the neccessary path homotopy is to observe that $f \cdot e$ is a **reparameterization** of $f$.
 
-A **reparameterization** of $f$ is the composition $f\circ \varphi$ where $\varphi:I\mapsto I$ is any continuous map such that $\varphi(0)=0$ and $\varphi(1)=1$. This is valuable as a reparameterization of a path preserves it's homotopy class; in that $f\circ \varphi \simeq f$. 
+A **reparameterization** of $f$ is the composition $f\circ \varphi$ where $\varphi:I \to I$ is any continuous map such that $\varphi(0)=0$ and $\varphi(1)=1$. This is valuable as a reparameterization of a path preserves it's homotopy class; in that $f\circ \varphi \simeq f$. 
 This is given by the homotopy $H = f \circ \varPhi$.
 
 $

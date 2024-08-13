@@ -7,12 +7,14 @@ import Markdown from '../components/Markdown';
 
 import CoveringMap from '../components/Scenes/CoveringMap';
 import Homomorphism from '../components/Scenes/Homomorphism';
+import HomeButton from '../components/HomeButton';
 
 const articleName = 's1';
 
 function S1() {
   return (
     <div className="App">
+      <HomeButton />
       <Element name="md" className="section" id="md">
         <Markdown fileName='intro' articleName={articleName}/>
       </Element>

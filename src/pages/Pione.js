@@ -19,12 +19,14 @@ import InverseH2 from '../components/FundamentalGroup/InverseH2';
 import AssociH2 from '../components/FundamentalGroup/AssociH2';
 import IdentityH1 from '../components/FundamentalGroup/IdentityH1';
 import AssociH1 from '../components/FundamentalGroup/AssociH1';
+import HomeButton from '../components/HomeButton';
 
 const articleName = 'pione';
 
 function Pione() {
   return (
     <div className="App">
+      <HomeButton />
       <Element name="md" className="section" id="md">
         <Markdown fileName='intro' articleName={articleName} />
       </Element>

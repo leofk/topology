@@ -4,7 +4,7 @@ import { Box, Stack } from '@mui/material';
 import Markdown from './Markdown';
 import '../css/ImageOverlay.css'; // Import CSS related to ImageOverlay
 
-function ImageOverlay({ linkTo, imageSrc, titleFileName, bodyFileName, articleName }) {
+function ImageOverlay({ linkTo, imageSrc, titleFileName, articleName }) {
   return (
     <Link to={linkTo} style={{ textDecoration: 'none' }}>
       <Box 

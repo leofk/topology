@@ -83,7 +83,7 @@ const ThreeScene = ({ Component, hasSecondSlider = false, hasIntegerChoice = fal
           minDistance={1.1} // Maximum zoom distance
         />
       </Canvas>
-      <Box sx={{ width: '80%', margin: '10px 0' }}>
+      <Box sx={{ width: '85%', margin: '10px 0' }}>
         {/* <Typography gutterBottom>Distance (s):</Typography> */}
         <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
           <DirectionsRunIcon />
@@ -92,7 +92,7 @@ const ThreeScene = ({ Component, hasSecondSlider = false, hasIntegerChoice = fal
 
       </Box>
       {hasSecondSlider && (
-        <Box sx={{ width: '80%', margin: '10px 0' }}>
+        <Box sx={{ width: '85%', margin: '10px 0' }}>
           {/* <Typography gutterBottom>Time (t):</Typography> */}
           <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
             <AccessTimeIcon />
@@ -103,7 +103,7 @@ const ThreeScene = ({ Component, hasSecondSlider = false, hasIntegerChoice = fal
       {hasIntegerChoice && 
       hasSecondInteger &&
       (
-        <Box sx={{ width: '80%', margin: '10px 0' }}>
+        <Box sx={{ width: '85%', margin: '10px 0' }}>
           <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
           <MIcon style={{ width: 24, height: 24 }} />
           <Slider
@@ -119,7 +119,7 @@ const ThreeScene = ({ Component, hasSecondSlider = false, hasIntegerChoice = fal
         </Box>
       )}
       {hasIntegerChoice && (
-        <Box sx={{ width: '80%', margin: '10px 0' }}>
+        <Box sx={{ width: '85%', margin: '10px 0' }}>
           <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
           <NIcon style={{ width: 24, height: 24 }} />
 

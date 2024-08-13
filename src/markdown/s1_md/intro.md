@@ -10,20 +10,32 @@ Suppose we base our loops at $x_0=(1,0)$. An obvious example is the trivial loop
 
 Consider the following map
 
-$p:\underset{s}{\R} \underset{\mapsto}{\to} \underset{(\cos 2\pi s, \sin 2\pi s)}{S^1}$ 
+$
+\begin{aligned}
+p:\underset{s}{\R} &\underset{\mapsto}{\longrightarrow} \underset{(\cos 2\pi s, \sin 2\pi s)}{S^1}
+\end{aligned}
+$
 
 This is the map that takes any value on the real line to point on the circle. $\R$ can be geometrically visualized as a single helix wrapping up above and below the circle. This map $p$ is also known as a covering map.
 
 To define the relationship between the two spaces, consider the following path in $\R$.
 
-$\widetilde{\omega_n}:\underset{s}{I} \underset{\mapsto}{\to} \underset{ns}{\R}$ 
+$
+\begin{aligned}
+\widetilde{\omega_n}: \underset{s}{I} &\underset{\mapsto}{\longrightarrow} \underset{ns}{\mathbb{R}}
+\end{aligned}
+$
 
 This is the path from 0 to $n$ on $\R$; where $n \in \Z$. 
 
 Using the covering map, we can project this path on $\R$ to a loop on $S^1$ by the following composition
 $\omega_n = p \circ \widetilde{\omega_n}$ 
 
-$\omega_n:\underset{s}{I} \underset{\mapsto}{\to} \underset{(\cos 2\pi n s, \sin 2\pi n s)}{S^1}$ 
+$
+\begin{aligned}
+\omega_n:\underset{s}{I} \underset{\mapsto}{\longrightarrow} \underset{(\cos 2\pi n s, \sin 2\pi n s)}{S^1}
+\end{aligned}
+$
 
 this yield a loop based at $x_0=(1,0)$ and travels clockwise around $S^1$, $n$ times.
 

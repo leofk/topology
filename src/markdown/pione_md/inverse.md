@@ -1,6 +1,6 @@
 ### Inverse: $f \cdot \bar{f} \simeq e$
 
-Suppose again we have some loop $f:I\mapsto X$ with basepoint $x_0$, we define $\bar{f}:I\mapsto X$ to be the inverse path of $f$ such that
+Suppose again we have some loop $f:I \to X$ with basepoint $x_0$, we define $\bar{f}:I \to X$ to be the inverse path of $f$ such that
 
 $\bar{f}(s)=f(1-s)$
 

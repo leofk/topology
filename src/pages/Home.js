@@ -4,7 +4,7 @@ import { Grid } from '@mui/material';
 import '../css/App.css';
 
 import circleImg from '../other/imgs/circle.png';
-import pioneImg from '../other/imgs/pione.png';
+import loopsImg from '../other/imgs/loops.png';
 
 import Markdown from '../components/Markdown';
 import ImageOverlay from '../components/ImageOverlay';
@@ -20,9 +20,8 @@ function Home() {
         <Grid item xs={12} sm={6}>
           <ImageOverlay 
             linkTo="/topology/loops"
-            imageSrc={pioneImg}
-            titleFileName="pione_title"
-            bodyFileName="pione_body"
+            imageSrc={loopsImg}
+            titleFileName="loops"
             articleName={articleName}
           />
         </Grid>
@@ -31,8 +30,7 @@ function Home() {
           <ImageOverlay 
             linkTo="/topology/circle"
             imageSrc={circleImg}
-            titleFileName="s1_title"
-            bodyFileName="s1_body"
+            titleFileName="circle"
             articleName={articleName}
           />
         </Grid>

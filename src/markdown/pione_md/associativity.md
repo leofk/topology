@@ -1,6 +1,6 @@
 ### Associativity: $f \cdot (g \cdot h) \simeq (f \cdot g) \cdot h$
 
-Suppose we have three loops $f,g,h:I\mapsto X$ all with basepoint $x_0$. We want to show that rearranging the parentheses in 
+Suppose we have three loops $f,g,h:I \to X$ all with basepoint $x_0$. We want to show that rearranging the parentheses in 
 an expression with the path concatenation operation with not change the result.
 
 $\\

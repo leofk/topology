@@ -1,9 +1,16 @@
 
-Given these components, we define the map $\Phi$ 
+Given these components, consider the map $\Phi$ 
 
-$\Phi:\underset{n}{\Z} \underset{\mapsto}{\to} \underset{[\omega_n]}{\pi_1(S^1,x_0)}$ 
+$
+\begin{aligned}
+\Phi: \underset{n}{\mathbb{Z}} &\underset{\mapsto}{\longrightarrow} \underset{[\omega_n]}{\pi_1(S^1, x_0)} 
+\end{aligned}
+$
 
-we would like to show that $\Phi$ is a group isomorphism.
+> Proposition: $\Phi$ is a group isomorphism.
+
+> Proof
+
 
 ## $\Phi$ is a Group Homomorphism
 

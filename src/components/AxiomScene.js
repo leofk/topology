@@ -73,7 +73,7 @@ const AxiomScene = ({ Axiom, H2, H1 = false }) => {
       </Box>
       
       {H1 && (
-        <Box sx={{ ...squareCanvasStyle, bottom: '12%' }}>
+        <Box sx={{ ...squareCanvasStyle, bottom: '9%' }}>
           <Canvas camera={{ fov: 75, position: [0, 1, 0] }}>
             <ambientLight intensity={1} />
             <H1 s={sliderValueS} t={sliderValueT} />
@@ -81,7 +81,7 @@ const AxiomScene = ({ Axiom, H2, H1 = false }) => {
         </Box>
       )}
 
-      <Box sx={{ width: '80%', margin: '10px 0' }}>
+      <Box sx={{ width: '85%', margin: '10px 0' }}>
         <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
           <DirectionsRunIcon />
           <Slider
@@ -102,7 +102,7 @@ const AxiomScene = ({ Axiom, H2, H1 = false }) => {
         </Stack>
       </Box>
 
-      <Box sx={{ width: '80%', margin: '10px 0' }}>
+      <Box sx={{ width: '85%', margin: '10px 0' }}>
         <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
           <AccessTimeIcon />
           <Slider
