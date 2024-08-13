@@ -47,7 +47,7 @@ const AxiomScene = ({ Axiom, H2, H1 = false }) => {
     width: '45vmin',
     height: '45vmin',
     position: 'absolute',
-    right: '0%', 
+    right: '1%', 
   };
 
   return (

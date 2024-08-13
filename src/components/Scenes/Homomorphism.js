@@ -10,11 +10,6 @@ const Homomorphism = ({ s, n, m }) => {
   const pathRef = useRef();
   const projectRef = useRef();
 
-  const numPoints = Math.floor(s * 1000); // number of points based on slider value
-  const loop_pos = [];
-  const path_pos = [];
-
-
   // helix path
   // s \in [0, ns]
   const helix = (s) => {
@@ -47,9 +42,9 @@ const Homomorphism = ({ s, n, m }) => {
     return m * s;
   };
 
-  // a path in R from m to n+m
-  const tau_w_n_tilde = (s) => {
-    return tau_m(w_n_tilde(s));
+  // a path in R from 0 to x
+  const path_x = (x, s) => {
+    return x * s;
   };
 
   // a path in R from 0 to m+n. 
@@ -57,7 +52,7 @@ const Homomorphism = ({ s, n, m }) => {
     if (s <= 1/2) {
       return w_m_tilde(2*s);
     } else {
-      return tau_w_n_tilde(2*s-1);
+      return tau_m(w_n_tilde(2*s-1));
     }
   };
 
@@ -66,9 +61,14 @@ const Homomorphism = ({ s, n, m }) => {
     return p(w_m_tilde(s));
   };
 
+  // a loop in S1 that travels x times. 
+  const loop_x = (x, s) => {
+    return p(path_x(x, s));
+  };
+
   // a loop in S1 that travels from m to n+m (n times)
   const w_nplusm = (s) => {
-    return p(tau_w_n_tilde(s));
+    return p(tau_m(w_n_tilde(s)));
   };
 
   // a loop in S1 that travels m+n times. 
@@ -80,12 +80,41 @@ const Homomorphism = ({ s, n, m }) => {
     }
   };
 
-  for (let i = 0; i <= numPoints; i++) {
-    const u = (i / 1000);
-    loop_pos.push(loop_mn(u));
-    path_pos.push(helix(path_mn(u)));
+
+  let numPoints = Math.floor(s * 1000); 
+  const maxPoints = Math.min(500 + Math.floor(Math.abs(m/n) * 500), 1000);
+
+  let flip = false;
+  let x = (m+n);
+
+  const loop_pos = [];
+  const path_pos = [];
+
+  if (m * n < 0) {
+    if (numPoints > 500) {
+      
+      if (numPoints >= maxPoints) { 
+        flip = true; 
+        numPoints = (1000/(1000-maxPoints))*(numPoints-maxPoints);
+      } else {
+        numPoints = Math.abs(500 - ((numPoints-500) / Math.abs(m/n)));
+      }
+    }
   }
 
+  for (let i = 0; i <= numPoints; i++) {
+    let u = i/1000;
+
+    if (flip) {
+      // create new loop/path
+      loop_pos.push(loop_x(x,u));
+      path_pos.push(helix(path_x(x,u)));
+    } else {
+      loop_pos.push(loop_mn(u));
+      path_pos.push(helix(path_mn(u)));
+    }
+  }
+  
   useFrame(() => {
     const w_n_obj = wnRef.current;
     const w_n_tilde_obj = wntildeRef.current;
@@ -93,11 +122,14 @@ const Homomorphism = ({ s, n, m }) => {
     const path = pathRef.current;
     const project = projectRef.current;
 
-    w_n_obj.position.copy(loop_mn(s));
-    w_n_tilde_obj.position.copy(helix(path_mn(s)));
+    const loopPos = loop_mn(s);
+    const pathPos = helix(path_mn(s));
+  
+    w_n_obj.position.copy(loopPos);
+    w_n_tilde_obj.position.copy(pathPos);
     loop.geometry.setFromPoints(loop_pos);
     path.geometry.setFromPoints(path_pos);
-    project.geometry.setFromPoints([loop_mn(s), helix(path_mn(s))]);
+    project.geometry.setFromPoints([loopPos, pathPos]);
   });
 
   return (
@@ -119,7 +151,7 @@ const Homomorphism = ({ s, n, m }) => {
         <bufferGeometry />
         <lineBasicMaterial color={'blue'} />
       </line>
-      <line ref={projectRef}>
+      <line ref={projectRef} >
         <bufferGeometry />
         <lineBasicMaterial color={'green'} />
       </line>
