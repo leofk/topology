@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Html } from '@react-three/drei';
-import Markdown from '../Markdown'; 
+import Markdown from '../Helpers/Markdown'; 
 import HLabels from './GridHelpers/HLabels';
 import Square from './GridHelpers/Square';
 import * as THREE from 'three';

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import IconButton from '@mui/material/IconButton';
 import { styled } from '@mui/material/styles';
-import backButtonImage from '../other/imgs/cube.png'; // Adjust the path as necessary
+import backButtonImage from '../../other/imgs/cube.png'; // Adjust the path as necessary
 
 // Styled IconButton for the back button with hover effect
 const StyledBackButton = styled(IconButton)({

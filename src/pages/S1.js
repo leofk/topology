@@ -2,12 +2,12 @@ import React from 'react';
 import { Element } from 'react-scroll';
 import '../css/App.css';
 
-import ThreeScene from '../components/ThreeScene';
-import Markdown from '../components/Markdown';
+import ThreeScene from '../components/Scenes/ThreeScene';
+import Markdown from '../components/Helpers/Markdown';
 
-import CoveringMap from '../components/Scenes/CoveringMap';
-import Homomorphism from '../components/Scenes/Homomorphism';
-import HomeButton from '../components/HomeButton';
+import CoveringMap from '../components/Circle/CoveringMap';
+import Homomorphism from '../components/Circle/Homomorphism';
+import HomeButton from '../components/Helpers/HomeButton';
 
 const articleName = 's1';
 

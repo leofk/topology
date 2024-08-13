@@ -6,8 +6,8 @@ import '../css/App.css';
 import circleImg from '../other/imgs/circle.png';
 import loopsImg from '../other/imgs/loops.png';
 
-import Markdown from '../components/Markdown';
-import ImageOverlay from '../components/ImageOverlay';
+import Markdown from '../components/Helpers/Markdown';
+import ImageOverlay from '../components/Helpers/ImageOverlay';
 
 const articleName = 'home';
 

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
-import Helix from '../S1/Helix'; // Import the Helix component
+import Helix from './Helix'; // Import the Helix component
 
 const CoveringMap = ({ s, n }) => {
   const wnRef = useRef();

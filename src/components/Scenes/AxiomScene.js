@@ -1,35 +1,13 @@
 import React, { useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import { CartesianAxis } from './Scenes/CartesianAxis';
-import Slider from '@mui/material/Slider';
+import { CartesianAxis } from '../Helpers/CartesianAxis';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import CustomSlider from '../Helpers/CustomSlider';
 
-
-// const CustomCamera = () => {
-// 	const { camera, gl } = useThree();
-  
-// 	useEffect(() => {
-// 	  const handleResize = () => {
-// 		const size = Math.min(gl.domElement.clientWidth, gl.domElement.clientHeight);
-// 		camera.aspect = 1;
-// 		camera.updateProjectionMatrix();
-// 		gl.setSize(size, size);
-// 	  };
-  
-// 	  window.addEventListener('resize', handleResize);
-// 	  handleResize(); // Set the initial aspect ratio
-  
-// 	  return () => {
-// 		window.removeEventListener('resize', handleResize);
-// 	  };
-// 	}, [camera, gl]);
-  
-// 	return null;
-//   };
   
 const AxiomScene = ({ Axiom, H2, H1 = false }) => {
   const [sliderValueS, setSliderValueS] = useState(0);
@@ -84,20 +62,9 @@ const AxiomScene = ({ Axiom, H2, H1 = false }) => {
       <Box sx={{ width: '85%', margin: '10px 0' }}>
         <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
           <DirectionsRunIcon />
-          <Slider
+          <CustomSlider
             value={sliderValueS}
-            min={0}
-            max={1}
-            step={0.01}
             onChange={handleSliderChangeS}
-            aria-labelledby="sliderS"
-            marks={[
-              { value: 0, label: '0' },
-              { value: 0.25, label: '1/4' },
-              { value: 0.5, label: '1/2' },
-              { value: 0.75, label: '3/4' },
-              { value: 1, label: '1' },
-            ]}
           />
         </Stack>
       </Box>
@@ -105,20 +72,9 @@ const AxiomScene = ({ Axiom, H2, H1 = false }) => {
       <Box sx={{ width: '85%', margin: '10px 0' }}>
         <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
           <AccessTimeIcon />
-          <Slider
+          <CustomSlider
             value={sliderValueT}
-            min={0}
-            max={1}
-            step={0.01}
             onChange={handleSliderChangeT}
-            aria-labelledby="sliderT"
-            marks={[
-              { value: 0, label: '0' },
-              { value: 0.25, label: '1/4' },
-              { value: 0.5, label: '1/2' },
-              { value: 0.75, label: '3/4' },
-              { value: 1, label: '1' },
-            ]}
           />
         </Stack>
       </Box>

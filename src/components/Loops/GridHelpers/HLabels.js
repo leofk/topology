@@ -1,7 +1,7 @@
 // HLabels.js
 import React from 'react';
 import { Html } from '@react-three/drei';
-import Markdown from '../../Markdown';
+import Markdown from '../../Helpers/Markdown';
 
 const HLabels = () => {
   return (

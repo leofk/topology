@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import { CartesianAxis } from './Scenes/CartesianAxis';
+import { CartesianAxis } from '../Helpers/CartesianAxis';
 import Slider from '@mui/material/Slider';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import { ReactComponent as MIcon } from '../other/icons/letter-m.svg'; // Adjust the import path
-import { ReactComponent as NIcon } from '../other/icons/letter-n.svg'; // Adjust the import path
+import { ReactComponent as MIcon } from '../../other/icons/letter-m.svg'; // Adjust the import path
+import { ReactComponent as NIcon } from '../../other/icons/letter-n.svg'; // Adjust the import path
+import CustomSlider from '../Helpers/CustomSlider';
 
 const ThreeScene = ({ Component, hasSecondSlider = false, hasIntegerChoice = false, hasSecondInteger = false }) => {
   const [sliderValueS, setSliderValueS] = useState(0);
@@ -87,16 +88,21 @@ const ThreeScene = ({ Component, hasSecondSlider = false, hasIntegerChoice = fal
         {/* <Typography gutterBottom>Distance (s):</Typography> */}
         <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
           <DirectionsRunIcon />
-          <Slider value={sliderValueS} min={0} max={1} step={0.01} onChange={handleSliderChangeS} aria-labelledby="sliderS" marks={marks} />
+          <CustomSlider
+            value={sliderValueS}
+            onChange={handleSliderChangeS}
+          />        
         </Stack>
-
       </Box>
       {hasSecondSlider && (
         <Box sx={{ width: '85%', margin: '10px 0' }}>
           {/* <Typography gutterBottom>Time (t):</Typography> */}
           <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
             <AccessTimeIcon />
-            <Slider value={sliderValueT} min={0} max={1} step={0.01} onChange={handleSliderChangeT} aria-labelledby="sliderT" marks={marks}/>
+            <CustomSlider
+              value={sliderValueT}
+              onChange={handleSliderChangeT}
+            />          
           </Stack>
         </Box>
       )}
@@ -106,7 +112,7 @@ const ThreeScene = ({ Component, hasSecondSlider = false, hasIntegerChoice = fal
         <Box sx={{ width: '85%', margin: '10px 0' }}>
           <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
           <MIcon style={{ width: 24, height: 24 }} />
-          <Slider
+          <CustomSlider
               value={integerValueM}
               min={-5}  // Adjust these values as needed
               max={5}
@@ -122,8 +128,7 @@ const ThreeScene = ({ Component, hasSecondSlider = false, hasIntegerChoice = fal
         <Box sx={{ width: '85%', margin: '10px 0' }}>
           <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
           <NIcon style={{ width: 24, height: 24 }} />
-
-          <Slider
+          <CustomSlider
               value={integerValue}
               min={-5}  // Adjust these values as needed
               max={5}

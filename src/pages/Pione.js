@@ -2,24 +2,24 @@ import React from 'react';
 import { Element } from 'react-scroll';
 import '../css/App.css';
 
-import ThreeScene from '../components/ThreeScene';
-import Markdown from '../components/Markdown';
-import AxiomScene from '../components/AxiomScene';
+import ThreeScene from '../components/Scenes/ThreeScene';
+import Markdown from '../components/Helpers/Markdown';
+import AxiomScene from '../components/Scenes/AxiomScene';
 
-import Loop from '../components/Scenes/Loop';
-import Homotopy from '../components/Scenes/Homotopy';
-import Class from '../components/Scenes/Class';
-import PathProduct from '../components/Scenes/PathProduct';
+import Loop from '../components/Loops/Loop';
+import Homotopy from '../components/Loops/Homotopy';
+import Class from '../components/Circle/Class';
+import PathProduct from '../components/Loops/PathProduct';
 
-import Identity from '../components/FundamentalGroup/Identity';
-import Inverse from '../components/FundamentalGroup/Inverse';
-import Associativity from '../components/FundamentalGroup/Associativity';
-import IdentityH2 from '../components/FundamentalGroup/IdentityH2';
-import InverseH2 from '../components/FundamentalGroup/InverseH2';
-import AssociH2 from '../components/FundamentalGroup/AssociH2';
-import IdentityH1 from '../components/FundamentalGroup/IdentityH1';
-import AssociH1 from '../components/FundamentalGroup/AssociH1';
-import HomeButton from '../components/HomeButton';
+import Identity from '../components/Loops/Identity';
+import Inverse from '../components/Loops/Inverse';
+import Associativity from '../components/Loops/Associativity';
+import IdentityH2 from '../components/Loops/IdentityH2';
+import InverseH2 from '../components/Loops/InverseH2';
+import AssociH2 from '../components/Loops/AssociH2';
+import IdentityH1 from '../components/Loops/IdentityH1';
+import AssociH1 from '../components/Loops/AssociH1';
+import HomeButton from '../components/Helpers/HomeButton';
 
 const articleName = 'pione';
 

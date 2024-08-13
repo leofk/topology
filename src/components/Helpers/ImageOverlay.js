@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Box, Stack } from '@mui/material';
 import Markdown from './Markdown';
-import '../css/ImageOverlay.css'; // Import CSS related to ImageOverlay
+import '../../css/ImageOverlay.css'; // Import CSS related to ImageOverlay
 
 function ImageOverlay({ linkTo, imageSrc, titleFileName, articleName }) {
   return (
