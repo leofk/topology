@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkexperiment=self.webpackChunkexperiment||[]).push([[983],{983:(e,s,p)=>{e.exports=p.p+"static/media/inverse.e0f9612c4da00e166216.md"}}]);
