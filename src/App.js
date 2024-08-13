@@ -11,8 +11,8 @@ const App = () => {
     <Router>
       <Routes>
 	  <Route path="/topology" element={<Home />} />
-        <Route path="/dotsandloops" element={<Pione />} />
-        <Route path="/circle" element={<S1 />} />
+        <Route path="/topology/loops" element={<Pione />} />
+        <Route path="/topology/circle" element={<S1 />} />
       </Routes>
     </Router>
   );

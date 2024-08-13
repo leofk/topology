@@ -19,7 +19,7 @@ function Home() {
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
           <ImageOverlay 
-            linkTo="/dotsandloops"
+            linkTo="/topology/loops"
             imageSrc={pioneImg}
             titleFileName="pione_title"
             bodyFileName="pione_body"
@@ -29,7 +29,7 @@ function Home() {
         
         <Grid item xs={12} sm={6}>
           <ImageOverlay 
-            linkTo="/circle"
+            linkTo="/topology/circle"
             imageSrc={circleImg}
             titleFileName="s1_title"
             bodyFileName="s1_body"
