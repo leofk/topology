@@ -85,7 +85,6 @@ const Homomorphism = ({ s, n, m }) => {
   const maxPoints = Math.min(500 + Math.floor(Math.abs(m/n) * 500), 1000);
 
   let flip = false;
-  let x = (m+n);
 
   const loop_pos = [];
   const path_pos = [];
@@ -93,11 +92,11 @@ const Homomorphism = ({ s, n, m }) => {
   if (m * n < 0) {
     if (numPoints > 500) {
       
-      if (numPoints >= maxPoints) { 
+      if (numPoints > maxPoints) { 
         flip = true; 
         numPoints = (1000/(1000-maxPoints))*(numPoints-maxPoints);
       } else {
-        numPoints = Math.abs(500 - ((numPoints-500) / Math.abs(m/n)));
+        numPoints = 500 - ((numPoints-500) / Math.abs(m/n));
       }
     }
   }
@@ -106,7 +105,7 @@ const Homomorphism = ({ s, n, m }) => {
     let u = i/1000;
 
     if (flip) {
-      // create new loop/path
+      let x = m+n;
       loop_pos.push(loop_x(x,u));
       path_pos.push(helix(path_x(x,u)));
     } else {

@@ -80,6 +80,7 @@ const ThreeScene = ({ Component, hasSecondSlider = false, hasIntegerChoice = fal
         <Component s={sliderValueS} t={sliderValueT} n={integerValue} m={integerValueM}/>
         <OrbitControls 
           maxDistance={9.5} // Maximum zoom distance
+          minDistance={1.1} // Maximum zoom distance
         />
       </Canvas>
       <Box sx={{ width: '80%', margin: '10px 0' }}>

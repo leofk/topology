@@ -1,36 +1,45 @@
 // src/components/Home.js
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Element } from 'react-scroll';
+import { Grid } from '@mui/material';
 import '../css/App.css';
 
+import circleImg from '../other/imgs/circle.png';
+import pioneImg from '../other/imgs/pione.png';
+
 import Markdown from '../components/Markdown';
+import ImageOverlay from '../components/ImageOverlay';
 
 const articleName = 'home';
 
 function Home() {
   return (
     <div className="App">
-      <Element>
-        <Markdown fileName='intro' articleName={articleName} />
-      </Element>
-      <Element>
-        <Link to="/dotsandloops">
-          <Markdown fileName='pione_title' articleName={articleName} />
-        </Link>
-      </Element> 
-      <Element>
-        <Markdown fileName='pione_body' articleName={articleName} />
-      </Element>    
-      <Element>
-        <Link to="/circle">
-         <Markdown fileName='s1_title' articleName={articleName} />
-        </Link>
-      </Element>
-      <Element>
-        <Markdown fileName='s1_body' articleName={articleName} />
-      </Element>    
-      </div>
+      <Markdown fileName='intro' articleName={articleName} />
+      
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={6}>
+          <ImageOverlay 
+            linkTo="/dotsandloops"
+            imageSrc={pioneImg}
+            titleFileName="pione_title"
+            bodyFileName="pione_body"
+            articleName={articleName}
+          />
+        </Grid>
+        
+        <Grid item xs={12} sm={6}>
+          <ImageOverlay 
+            linkTo="/circle"
+            imageSrc={circleImg}
+            titleFileName="s1_title"
+            bodyFileName="s1_body"
+            articleName={articleName}
+          />
+        </Grid>
+      </Grid>
+    
+    </div>
   );
 }
 

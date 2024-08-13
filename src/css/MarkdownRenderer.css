@@ -1,15 +1,37 @@
-/* src/MarkdownRenderer.css */
 .markdown-container {
 	font-family: 'Times New Roman', Times, serif;
-	padding: 20px;
+	padding: 10px;
 	font-size: 1.1em;
 	line-height: 1.6;
 	max-width: 1000px;
-	margin: 10px auto; /* Center horizontally with some top and bottom margin */
+	margin: 10px auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
   }
   
   .markdown-container p {
-	margin-bottom: 1em;
+	margin: 1em auto;
+	max-width: 100%;
+	text-align: center;
+	/* line-height: 1.8;  */
+  }
+
+  .markdown-container h1,
+.markdown-container h2,
+.markdown-container h3,
+.markdown-container h4,
+.markdown-container h5,
+.markdown-container h6 {
+  margin-top: 1em; /* Space before the heading */
+  margin-bottom: 0em; /* Space after the heading */
+}
+  
+  .parent-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
   }
   
   .markdown-container blockquote {
@@ -40,3 +62,4 @@
 	padding: 8px;
 	text-align: left;
   }
+  

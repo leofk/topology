@@ -4,7 +4,7 @@ One of the foundational results in algebraic topology is the calculation of the 
 
 Before we get into the proof, let us build up some intuition on what we might expect from elements in the fundmental group of the circle. 
 
-Suppose we base our loops at $x_0=(1,0)$. An obvious example is the trivial loop, which remains stationary at (1,0)(1,0) and corresponds to the identity element in the group. More interestingly, we can consider loops that traverse the circle once in a clockwise direction, twice, and so on. The same can be said for counter clockwise rotations. Now these loops appear distinct up to homotopy, but this is a non-trivial proof. For this reason - we call to covering spaces.
+Suppose we base our loops at $x_0=(1,0)$. An obvious example is the trivial loop, which remains stationary at $(1,0)$ and corresponds to the identity element in the group. More interestingly, we can consider loops that traverse the circle once in a clockwise direction, twice, and so on. The same can be said for counter clockwise rotations. Now these loops appear distinct up to homotopy, but this is a non-trivial observation. For this reason, we call to covering spaces.
 
 ## Covering Spaces and Maps
 

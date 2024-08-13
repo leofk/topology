@@ -60,6 +60,7 @@ const AxiomScene = ({ Axiom, H2, H1 = false }) => {
           <Axiom s={sliderValueS} t={sliderValueT} />
           <OrbitControls 
             maxDistance={9.5} // Maximum zoom distance
+            minDistance={1.1} // Maximum zoom distance
           />
         </Canvas>
       </Box>

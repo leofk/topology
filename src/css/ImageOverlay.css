@@ -1,0 +1,42 @@
+.image-container {
+	position: relative;
+	width: 100%;
+	max-width: 600px; /* Control the maximum width of the image container */
+  }
+  
+  .image {
+	display: block;
+	width: 100%;
+	height: auto;
+  }
+  
+  .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.1); /* Adjusted for better contrast */
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .text {
+	color: black;
+	text-align: center; /* Center text within the container */
+	max-width: 80%; /* Limit the maximum width of the text container */
+	width: auto; /* Automatically adjust the width based on content */
+	padding: 16px; /* Padding inside the text container */
+	box-sizing: border-box; /* Include padding in width calculation */
+	border-radius: 8px; /* Optional rounded corners */
+	margin-left: auto; /* Center align with side margins */
+	margin-right: auto; /* Center align with side margins */
+  }
+  
+  .image-container:hover .overlay {
+	opacity: 1;
+  }
+  

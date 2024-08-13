@@ -1,7 +1,5 @@
-/* src/App.css */
 .App {
   font-family: sans-serif;
-  /* text-align: center; */
 }
 
 .section {
@@ -9,17 +7,32 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
-  box-sizing: border-box;
 }
 
 #md {
-  /* background-color: #f0f0f0; */
+  padding: 20px;
 }
 
 #tjs {
-  height: 100vh; /* This section retains full viewport height for the Three.js scene */
-  /* background-color: #e0e0e0; */
+  height: 100vh;
 }
 
+.MuiTypography-root {
+  /* Add custom styles for typography if needed */
+}
 
-/*  */
+.MuiGrid-root {
+  padding: 20px;
+}
+
+.markdown-content a {
+  color: inherit;
+  text-decoration: none;
+  margin: 1em auto;
+	max-width: 100%;
+	text-align: center;
+}
+
+.markdown-content {
+  color: black;
+}
