@@ -1,6 +1,5 @@
 // src/components/Home.js
 import React from 'react';
-import { Element } from 'react-scroll';
 import { Grid } from '@mui/material';
 import '../css/App.css';
 

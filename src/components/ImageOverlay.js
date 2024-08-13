@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Box, Typography, Stack } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 import Markdown from './Markdown';
 import '../css/ImageOverlay.css'; // Import CSS related to ImageOverlay
 

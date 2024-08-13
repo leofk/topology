@@ -18,7 +18,7 @@ const Markdown = ({ fileName, articleName, markdownContent }) => {
     } else if (markdownContent) {
       setContent(markdownContent);
     }
-  }, [fileName, markdownContent]);
+  }, [fileName, articleName, markdownContent]);
 
   return (
     <div className="markdown-container">
