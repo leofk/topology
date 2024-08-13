@@ -2,8 +2,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Pione from './pages/Pione';
-import S1 from './pages/S1';
+import Loops from './pages/Loops';
+import Circle from './pages/Circle';
 import './css/App.css';
 
 const App = () => {
@@ -11,8 +11,8 @@ const App = () => {
     <Router>
       <Routes>
 	  <Route path="/topology" element={<Home />} />
-        <Route path="/topology/loops" element={<Pione />} />
-        <Route path="/topology/circle" element={<S1 />} />
+        <Route path="/topology/loops" element={<Loops />} />
+        <Route path="/topology/circle" element={<Circle />} />
       </Routes>
     </Router>
   );

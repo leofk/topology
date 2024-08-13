@@ -50,25 +50,22 @@ const AssociH2 = ({ s, t }) => {
       <Html position={[-.25, 0, -.57]} center>
         <Markdown markdownContent="$\frac{1}{4}$" />
       </Html>
-	  <Html position={[-.375, 0, -0.57]} center>
+	  <Html position={[-.375, 0, -0.59]} center>
         <Markdown markdownContent="#### $f$" />
       </Html>
-      <Html position={[-.125, 0, -.57]} center>
+      <Html position={[-.125, 0, -.59]} center>
         <Markdown markdownContent="#### $g$" />
       </Html>
-      <Html position={[.25, 0, -.57]} center>
+      <Html position={[.25, 0, -.59]} center>
         <Markdown markdownContent="#### $h$" />
       </Html>
-	  <Html position={[-.25, 0, .57]} center>
+	  <Html position={[-.25, 0, .55]} center>
         <Markdown markdownContent="#### $f$" />
       </Html>
-	  <Html position={[.125, 0, .57]} center>
+	  <Html position={[.125, 0, .55]} center>
         <Markdown markdownContent="#### $g$" />
       </Html>
-      <Html position={[.375, 0, .57]} center>
-        <Markdown markdownContent="#### $h$" />
-      </Html>
-      <Html position={[.375, 0, .57]} center>
+      <Html position={[.375, 0, .55]} center>
         <Markdown markdownContent="#### $h$" />
       </Html>
     </group>

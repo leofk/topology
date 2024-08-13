@@ -27,14 +27,14 @@ $
 \end{aligned}
 $
 
-As such, we want to define a path homotopy $H$ to show that traversing $f$, then retreating back along $\bar{f}$, is path homotopic to
+As such, we want to define a path homotopy $H_2$ to show that traversing $f$, then retreating back along $\bar{f}$, is path homotopic to
 the constant path $e$ (i.e. doing nothing).
 
 $
 \begin{aligned}
-H(0,t)&= H(1,t) = x_0 \\
-H(s,0)&=f \cdot \bar{f} \\ 
-H(s,1)&=e
+H_2(0,t)&= H_2(1,t) = x_0 \\
+H_2(s,0)&=f \cdot \bar{f} \\ 
+H_2(s,1)&=e
 \end{aligned}
 $
 
@@ -42,14 +42,14 @@ Let us, again, consider a decomposition of the unit square $I \times I$. We obse
 
 $s=\frac{1-t}{2}$ and $s=\frac{1+t}{2}$
 
-Thinking about this closely, as $t$ varies in $H$, what we would like is to travel $f \cdot \bar{f}$ entirely at $t=0$, and not move at all when $t=1$.
+Thinking about this closely, as $t$ varies in $H_2$, what we would like is to travel $f \cdot \bar{f}$ entirely at $t=0$, and not move at all when $t=1$.
 So, in between, we should travel $f$ for some distance on $s\in\left[0,\frac{1-t}{2}\right)$, remain stationary between $s\in\left[\frac{1-t}{2},\frac{1+t}{2}\right)$, and then return along $\bar{f}$ till $s=1$.
 
 In which case, the speed in which we traverse $f$ and $\bar{f}$ is fixed in terms of $s$ by $f \cdot \bar{f}$. 
 Note, we will write $\bar{f}$ as a reparameterization of $f$ for the sake of consistency across the piece-wise terms.
 
 $\\
-H(s,t) =  
+H_2(s,t) =  
 \begin{cases}
    f(2s) &s\in\left[0,\frac{1-t}{2}\right)\\
    f(...) &s\in\left[\frac{1-t}{2},\frac{1+t}{2}\right)\\
@@ -57,10 +57,10 @@ H(s,t) =
 \end{cases}
 $
 
-It remains to make $H$ continuous at the points in which it stops moving; $s\in\left[\frac{1-t}{2},\frac{1+t}{2}\right)$
+It remains to make $H_2$ continuous at the points in which it stops moving; $s\in\left[\frac{1-t}{2},\frac{1+t}{2}\right)$
 
 $\\
-H(s,t) =  
+H_2(s,t) =  
 \begin{cases}
    f(2s) &s\in\left[0,\frac{1-t}{2}\right)\\
    f(1-t) &s\in\left[\frac{1-t}{2},\frac{1+t}{2}\right)\\

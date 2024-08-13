@@ -39,13 +39,13 @@ $
 One was in which to define the neccessary path homotopy is to observe that $f \cdot e$ is a **reparameterization** of $f$.
 
 A **reparameterization** of $f$ is the composition $f\circ \varphi$ where $\varphi:I \to I$ is any continuous map such that $\varphi(0)=0$ and $\varphi(1)=1$. This is valuable as a reparameterization of a path preserves it's homotopy class; in that $f\circ \varphi \simeq f$. 
-This is given by the homotopy $H = f \circ \varPhi$.
+This is given by the homotopy $H_1 = f \circ \varPhi$.
 
 $
 \varPhi\left(s,t\right) :=(1-t)\varphi(s) + ts
 $
 
-Thus, in our case, if we were able to define $\varphi$ such that $f\circ \varphi = f \cdot e$, then $f \cdot e \simeq f$ will be trivial by $H$.
+Thus, in our case, if we were able to define $\varphi$ such that $f\circ \varphi = f \cdot e$, then $f \cdot e \simeq f$ will be trivial by $H_1$.
 
 Well, by observation, $f \cdot e$ is essentially the loop in which we do $f$ at twice speed. So let us define $\varphi$ that would make $f$ achieve this:
 
@@ -84,26 +84,26 @@ f \cdot e
 \end{aligned}
 $
 
-and so by the homotopy $H$ from earlier, we have $f \cdot e \simeq f$ as desired. 
+and so by the homotopy $H_1$ from earlier, we have $f \cdot e \simeq f$ as desired. 
 
 #### Method 2
 
-Another way in which to define a homotopy $H$ for these loops is to consider a decomposition of the unit square $I \times I$.
+Another way in which to define a homotopy $H_2$ for these loops is to consider a decomposition of the unit square $I \times I$.
 
-Suppose we want $H$ such that
+Suppose we want $H_2$ such that
 
 $
 \begin{aligned}
-H(0,t)&= H(1,t) = x_0 \\
-H(s,0)&=f \cdot e \\ 
-H(s,1)&=f 
+H_2(0,t)&= H_2(1,t) = x_0 \\
+H_2(s,0)&=f \cdot e \\ 
+H_2(s,1)&=f 
 \end{aligned}
 $
 
 to define an explicit map that satisfies these constraints, it would help to isolate the loops as a piecewise function. 
 
 $\\
-H(s,t) =  
+H_2(s,t) =  
 \begin{cases}
    f(...) &s\in...\\
    e(...) &s\in...
@@ -117,7 +117,7 @@ $s=\frac{t+1}{2}$
 So plugging that into our homotopy gives us bounds
 
 $\\
-H(s,t) =  
+H_2(s,t) =  
 \begin{cases}
    f(...) &s\in\left[0,\frac{t+1}{2}\right)\\
    e(...) &s\in\left[\frac{t+1}{2},1\right]
@@ -125,21 +125,21 @@ H(s,t) =
 $
 
 $e$ is $x_0$ everywhere, it remains to choose an appropriate input to $f$ 
-such that $H$ is continuous at $s=\frac{t+1}{2}$ and $H(0,t)=x_0$. 
+such that $H_2$ is continuous at $s=\frac{t+1}{2}$ and $H_2(0,t)=x_0$. 
 
-Now since $H(\frac{t+1}{2},t)=x_0$, we observe that $H$ for $s\in\left[0,\frac{t+1}{2}\right)$ should traverse the entirety of $f$. 
+Now since $H_2(\frac{t+1}{2},t)=x_0$, we observe that $H_2$ for $s\in\left[0,\frac{t+1}{2}\right)$ should traverse the entirety of $f$. 
 However $f$ runs from $s=[0,1]$, so to reparameterize $f$ to complete within $s\in\left[0,\frac{t+1}{2}\right)$ we should speed it up 
 by a factor of $\frac{2}{t+1}$.
 
 
 $\\
-H(s,t) =  
+H_2(s,t) =  
 \begin{cases}
    f\left(\frac{2s}{t+1}\right) &s\in\left[0,\frac{t+1}{2}\right)\\
    x_0 &s\in\left[\frac{t+1}{2},1\right]
 \end{cases}
 $
 
-Thus, since we have defined a Homotopy $H$ between $f \cdot e$ and $f$ where $H$ is continuous and all endpoint constraints are satisfied - we conclude $f \cdot e \simeq f$ as desired.
+Thus, since we have defined a Homotopy $H_2$ between $f \cdot e$ and $f$ where $H_2$ is continuous and all endpoint constraints are satisfied - we conclude $f \cdot e \simeq f$ as desired.
 
-In the illustration that follows, we have two loops: $f \cdot e$ in *red*, and $f$ in *blue*. The loops that arise from the two homotopies we computed are in *green* and *yellow* for method 1 and method 2 respectively. Further, the graph in the top-right portray the interaction of $s$ and $t$ on the decomposed unit square $I \times I$. Observe how the loop transitions from $f$ to $e$ as it intersects with the line $s=\frac{t+1}{2}$. Similarly, we illustrate how $\varphi$ varies with $t$ for the homotopy $H = f \circ \varPhi$. Observe how, since $H$ goes between $f \circ \varphi = f \cdot e$ and $f$, $\varPhi\left(s,0\right)$ graphs $\varphi(s)$ and conversly $\varPhi\left(s,1\right)$ trivially graphs $s$.
+In the illustration that follows, we have two loops: $f \cdot e$ in *red*, and $f$ in *blue*. The loops that arise from the two homotopies we computed are in *green* and *yellow* for method 1 and method 2 respectively. Further, the graph in the top-right portray the interaction of $s$ and $t$ on the decomposed unit square $I \times I$. Observe how the loop transitions from $f$ to $e$ as it intersects with the line $s=\frac{t+1}{2}$. Similarly, we illustrate how $\varphi$ varies with $t$ for the homotopy $H_1 = f \circ \varPhi$. Observe how, since $H_1$ goes between $f \circ \varphi = f \cdot e$ and $f$, $\varPhi\left(s,0\right)$ graphs $\varphi(s)$ and conversly $\varPhi\left(s,1\right)$ trivially graphs $s$.

@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
+// src/components/Scenes/ThreeScene.js
+import React, { useState, useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { CartesianAxis } from '../Helpers/CartesianAxis';
-import Slider from '@mui/material/Slider';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import { ReactComponent as MIcon } from '../../other/icons/letter-m.svg'; // Adjust the import path
-import { ReactComponent as NIcon } from '../../other/icons/letter-n.svg'; // Adjust the import path
+import { ReactComponent as MIcon } from '../../other/icons/letter-m.svg';
+import { ReactComponent as NIcon } from '../../other/icons/letter-n.svg'; 
 import CustomSlider from '../Helpers/CustomSlider';
+import KeyComponent from '../Helpers/KeyComponent';
 
-const ThreeScene = ({ Component, hasSecondSlider = false, hasIntegerChoice = false, hasSecondInteger = false }) => {
+const ThreeScene = ({ label, Component, hasSecondSlider = false, hasIntegerChoice = false, hasSecondInteger = false, keyComponents = [] }) => {
   const [sliderValueS, setSliderValueS] = useState(0);
   const [sliderValueT, setSliderValueT] = useState(0);
   const [integerValue, setIntegerValue] = useState(0); 
@@ -33,29 +34,6 @@ const ThreeScene = ({ Component, hasSecondSlider = false, hasIntegerChoice = fal
     setIntegerValueM(newValue);
   };
 
-  const marks = [
-    {
-      value: 0,
-      label: '0',
-    },
-    {
-      value: .25,
-      label: '1/4',
-    },
-    {
-      value: 0.5,
-      label: '1/2',
-    },
-    {
-      value: 0.75,
-      label: '3/4',
-    },
-    {
-      value: 1,
-      label: '1',
-    },
-  ];
-
   const marks_int = [
     { value: -5, label: '-5' },
     { value: -4, label: '-4' },
@@ -70,9 +48,87 @@ const ThreeScene = ({ Component, hasSecondSlider = false, hasIntegerChoice = fal
     { value: 5, label: '5' },
   ];
 
+  const keyComponentMap = {
+    CM: [
+      { 
+        color: 'red', 
+        label: `\\omega_{${integerValue}}(${sliderValueS})=(${Math.cos(2 * Math.PI * integerValue * sliderValueS).toFixed(2)}, ${Math.sin(2 * Math.PI * integerValue * sliderValueS).toFixed(2)})`
+      },
+      {
+        color: 'blue', 
+        label: `\\widetilde{\\omega_{${integerValue}}}=${integerValue * sliderValueS}`
+      },
+      {
+        color: 'green', 
+        label: `p(${integerValue * sliderValueS})=(${Math.cos(2 * Math.PI * integerValue * sliderValueS).toFixed(2)}, ${Math.sin(2 * Math.PI * integerValue * sliderValueS).toFixed(2)})`,
+      }
+    ],
+    HM: [
+      { 
+        color: 'red', 
+        label: `\\omega_{${integerValue + integerValueM}}(${sliderValueS})=(${Math.cos(2 * Math.PI * (integerValue + integerValueM) * sliderValueS).toFixed(2)}, ${Math.sin(2 * Math.PI * (integerValue + integerValueM) * sliderValueS).toFixed(2)})`,
+      },
+      {
+        color: 'blue', 
+        label: `\\widetilde{\\omega_{${integerValue + integerValueM}}}=${(integerValue + integerValueM) * sliderValueS}`
+      },
+      {
+        color: 'green', 
+        label: `p(${(integerValue + integerValueM) * sliderValueS})=(${Math.cos(2 * Math.PI * (integerValue + integerValueM) * sliderValueS).toFixed(2)}, ${Math.sin(2 * Math.PI * (integerValue + integerValueM) * sliderValueS).toFixed(2)})`
+      }
+    ],
+    Loop: [
+      { color: 'red', label: 'f' } 
+    ],
+    Homotopy: [
+      { color: 'red', label: 'f' },
+      { color: 'blue', label: 'g' },
+      { color: 'green', label: 'H' },
+    ],
+    Class : [
+      { color: 'red', label: 'f' },
+      { color: 'blue', label: 'g' },
+      { color: 'yellow', label: 'h' },
+      { color: 'purple', label: 'A' },
+      { color: 'green', label: 'B' },
+      { color: 'orange', label: 'C' },
+    ],
+    PathPro: [
+      { color: 'red', label: 'f \\cdot g' },
+    ],
+    Identity: [
+      { color: 'red', label: 'f \\cdot e' },
+      { color: 'blue', label: 'f' },
+      { color: 'green', label: 'H_1' },
+      { color: 'yellow', label: 'H_2' },
+    ],
+    Inverse: [
+      { color: 'red', label: 'f \\cdot \\bar{f}' },
+      { color: 'blue', label: 'e' },
+      { color: 'yellow', label: 'H' },
+    ],
+    Associativity: [
+      { color: 'red', label: 'f \\cdot (g \\cdot h) ' },
+      { color: 'blue', label: ' (f \\cdot g) \\cdot h' },
+      { color: 'green', label: 'H_1' },
+      { color: 'yellow', label: 'H_2' },
+    ]
+  };
+
+  // Use useMemo to avoid recalculating on every render
+  const dynamicKeyComponents = useMemo(() => {
+    const components = keyComponentMap[label] || [];
+    return components.map(key => {
+      let label = key.label;
+
+      // Replace placeholders with dynamic values
+      return { color: key.color, label };
+    });
+  }, [keyComponentMap, label, sliderValueS, integerValue, integerValueM]);
+
   return (
     <Box
-      sx={{ height: '100%', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}
+      sx={{ height: '100%', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', position: 'relative' }}
     >
       <Canvas camera={{ fov: 75, position: [2, 1, 2] }}>
         <ambientLight intensity={0.2} />
@@ -85,7 +141,6 @@ const ThreeScene = ({ Component, hasSecondSlider = false, hasIntegerChoice = fal
         />
       </Canvas>
       <Box sx={{ width: '85%', margin: '10px 0' }}>
-        {/* <Typography gutterBottom>Distance (s):</Typography> */}
         <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
           <DirectionsRunIcon />
           <CustomSlider
@@ -96,7 +151,6 @@ const ThreeScene = ({ Component, hasSecondSlider = false, hasIntegerChoice = fal
       </Box>
       {hasSecondSlider && (
         <Box sx={{ width: '85%', margin: '10px 0' }}>
-          {/* <Typography gutterBottom>Time (t):</Typography> */}
           <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
             <AccessTimeIcon />
             <CustomSlider
@@ -106,40 +160,43 @@ const ThreeScene = ({ Component, hasSecondSlider = false, hasIntegerChoice = fal
           </Stack>
         </Box>
       )}
-      {hasIntegerChoice && 
-      hasSecondInteger &&
-      (
+      {hasIntegerChoice && hasSecondInteger && (
         <Box sx={{ width: '85%', margin: '10px 0' }}>
           <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
-          <MIcon style={{ width: 24, height: 24 }} />
-          <CustomSlider
+            <MIcon style={{ width: 24, height: 24 }} />
+            <CustomSlider
               value={integerValueM}
-              min={-5}  // Adjust these values as needed
+              min={-5}
               max={5}
               step={1}
               onChange={handleIntegerChangeM}
               aria-labelledby="integerSliderM"
               marks={marks_int}
             />
-           </Stack>
+          </Stack>
         </Box>
       )}
       {hasIntegerChoice && (
         <Box sx={{ width: '85%', margin: '10px 0' }}>
           <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
-          <NIcon style={{ width: 24, height: 24 }} />
-          <CustomSlider
+            <NIcon style={{ width: 24, height: 24 }} />
+            <CustomSlider
               value={integerValue}
-              min={-5}  // Adjust these values as needed
+              min={-5}
               max={5}
               step={1}
               onChange={handleIntegerChange}
               aria-labelledby="integerSliderN"
               marks={marks_int}
             />
-           </Stack>
+          </Stack>
         </Box>
       )}
+      <Box sx={{ position: 'absolute', top: 10, left: 10, width: 'auto' }}>
+        {dynamicKeyComponents.map((key, index) => (
+          <KeyComponent key={index} color={key.color} label={key.label} />
+        ))}
+      </Box>
     </Box>
   );
 };

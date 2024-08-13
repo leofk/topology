@@ -21,7 +21,7 @@ import IdentityH1 from '../components/Loops/IdentityH1';
 import AssociH1 from '../components/Loops/AssociH1';
 import HomeButton from '../components/Helpers/HomeButton';
 
-const articleName = 'pione';
+const articleName = 'loops';
 
 function Pione() {
   return (
@@ -31,43 +31,43 @@ function Pione() {
         <Markdown fileName='intro' articleName={articleName} />
       </Element>
       <Element name="tjs" className="section" id="tjs">
-        <ThreeScene Component={Loop} />
+        <ThreeScene label='Loop' Component={Loop} />
       </Element>
       <Element name="md" className="section" id="md">
         <Markdown fileName='homotopy' articleName={articleName}/>
       </Element>
       <Element name="tjs" className="section" id="tjs">
-        <ThreeScene Component={Homotopy} hasSecondSlider />
+        <ThreeScene label='Homotopy' Component={Homotopy} hasSecondSlider/>
       </Element>
       <Element name="md" className="section" id="md">
         <Markdown fileName='class' articleName={articleName}/>
       </Element>
       <Element name="tjs" className="section" id="tjs">
-        <ThreeScene Component={Class} hasSecondSlider />
+        <ThreeScene label='Class' Component={Class} hasSecondSlider />
       </Element>
       <Element name="md" className="section" id="md">
         <Markdown fileName='product' articleName={articleName}/>
       </Element>
       <Element name="tjs" className="section" id="tjs">
-        <ThreeScene Component={PathProduct} />
+        <ThreeScene label='PathProduct' Component={PathProduct} />
       </Element>
       <Element name="md" className="section" id="md">
         <Markdown fileName='fundamentalgroup' articleName={articleName}/>
       </Element>
       <Element name="tjs" className="section" id="tjs">
-        <AxiomScene Axiom={Identity} H2={IdentityH2} H1={IdentityH1} />
+        <AxiomScene label='Identity' Axiom={Identity} H2={IdentityH2} H1={IdentityH1}  />
       </Element>
       <Element name="md" className="section" id="md">
         <Markdown fileName='inverse' articleName={articleName}/>
       </Element>
       <Element name="tjs" className="section" id="tjs">
-      <AxiomScene Axiom={Inverse} H2={InverseH2} />
+      <AxiomScene label='Inverse' Axiom={Inverse} H2={InverseH2}  />
       </Element>
       <Element name="md" className="section" id="md">
         <Markdown fileName='associativity' articleName={articleName}/>
       </Element>
       <Element name="tjs" className="section" id="tjs">
-      <AxiomScene Axiom={Associativity} H2={AssociH2} H1={AssociH1} />
+      <AxiomScene label='Associativity' Axiom={Associativity} H2={AssociH2} H1={AssociH1} />
       </Element>
     </div>
   );

@@ -9,9 +9,9 @@ import CoveringMap from '../components/Circle/CoveringMap';
 import Homomorphism from '../components/Circle/Homomorphism';
 import HomeButton from '../components/Helpers/HomeButton';
 
-const articleName = 's1';
+const articleName = 'circle';
 
-function S1() {
+function Circle() {
   return (
     <div className="App">
       <HomeButton />
@@ -19,13 +19,13 @@ function S1() {
         <Markdown fileName='intro' articleName={articleName}/>
       </Element>
       <Element name="tjs" className="section" id="tjs">
-        <ThreeScene Component={CoveringMap} hasIntegerChoice={true}/>
+        <ThreeScene label='CM' Component={CoveringMap} hasIntegerChoice={true}/>
       </Element>
       <Element name="md" className="section" id="md">
         <Markdown fileName='homomorphism' articleName={articleName}/>
       </Element>
       <Element name="tjs" className="section" id="tjs">
-        <ThreeScene Component={Homomorphism} hasIntegerChoice={true} hasSecondInteger={true}/>
+        <ThreeScene label='HM' Component={Homomorphism} hasIntegerChoice={true} hasSecondInteger={true} />
       </Element>
       <Element name="md" className="section" id="md">
         <Markdown fileName='facts' articleName={articleName}/>
@@ -34,4 +34,4 @@ function S1() {
   );
 }
 
-export default S1;
+export default Circle;

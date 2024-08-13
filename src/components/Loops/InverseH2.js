@@ -37,13 +37,13 @@ const InverseH2 = ({ s, t }) => {
       </line>
       <Square />
       <HLabels />
-      <Html position={[-0, 0, -0.57]} center>
+      <Html position={[-0, 0, -0.59]} center>
           <Markdown markdownContent="#### $e$" />
         </Html>
-      <Html position={[-.25, 0, .57]} center>
+      <Html position={[-.25, 0, .55]} center>
           <Markdown markdownContent="#### $f$" />
         </Html>
-      <Html position={[.25, 0, .57]} center>
+      <Html position={[.25, 0, .55]} center>
         <Markdown markdownContent="#### $\bar{f}$" />
       </Html>
     </group>

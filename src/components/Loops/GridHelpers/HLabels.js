@@ -23,7 +23,7 @@ const HLabels = () => {
         <Markdown markdownContent="$1$" />
       </Html>
       <Html position={[0.6, 0, -0.6]} center>
-        <Markdown markdownContent="### $H(s,t)$" />
+        <Markdown markdownContent="### $H_2(s,t)$" />
       </Html>
     </>
   );
