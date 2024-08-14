@@ -33,18 +33,18 @@ const AxiomScene = ({ label, Axiom, H2, H1 = false, keyComponents = [] }) => {
       { color: 'red', label: 'f \\cdot e' },
       { color: 'blue', label: 'f' },
       { color: 'green', label: 'H_1' },
-      { color: 'yellow', label: 'H_2' },
+      { color: 'orange', label: 'H_2' },
     ],
     Inverse: [
       { color: 'red', label: 'f \\cdot \\bar{f}' },
       { color: 'blue', label: 'e' },
-      { color: 'yellow', label: 'H_2' },
+      { color: 'orange', label: 'H_2' },
     ],
     Associativity: [
       { color: 'red', label: 'f \\cdot (g \\cdot h) ' },
       { color: 'blue', label: ' (f \\cdot g) \\cdot h' },
       { color: 'green', label: 'H_1' },
-      { color: 'yellow', label: 'H_2' },
+      { color: 'orange', label: 'H_2' },
     ]
   };
 
@@ -110,7 +110,7 @@ const AxiomScene = ({ label, Axiom, H2, H1 = false, keyComponents = [] }) => {
           />
         </Stack>
       </Box>
-      <Box sx={{ position: 'absolute', top: 10, left: 10, width: 'auto' }}>
+      <Box sx={{ position: 'absolute', top: 10, left: 20, width: 'auto' }}>
         {dynamicKeyComponents.map((key, index) => (
           <KeyComponent key={index} color={key.color} label={key.label} />
         ))}

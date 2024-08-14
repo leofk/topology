@@ -8,7 +8,7 @@ import AxiomScene from '../components/Scenes/AxiomScene';
 
 import Loop from '../components/Loops/Loop';
 import Homotopy from '../components/Loops/Homotopy';
-import Class from '../components/Circle/Class';
+import Class from '../components/Loops/Class';
 import PathProduct from '../components/Loops/PathProduct';
 
 import Identity from '../components/Loops/Identity';

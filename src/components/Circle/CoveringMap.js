@@ -89,7 +89,7 @@ const CoveringMap = ({ s, n }) => {
       </line>
       <line ref={projectRef}>
         <bufferGeometry />
-        <lineBasicMaterial color={'green'} />
+        <lineBasicMaterial color={'darkorange'} />
       </line>
     </group>
   );

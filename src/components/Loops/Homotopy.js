@@ -2,6 +2,20 @@ import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
+export const loop_f = (s) => {
+  const angle = s * Math.PI * 2;
+  return new THREE.Vector3(Math.cos(angle), 0, Math.sin(angle));
+};
+
+export const loop_g = (s) => {
+  const angle = s * Math.PI * 2;
+  return new THREE.Vector3(Math.cos(angle), Math.sin(angle), 0);
+};
+
+export const homotopy = (s, t) => {
+  return new THREE.Vector3().addVectors(loop_f(s).clone().multiplyScalar(1 - t), loop_g(s).clone().multiplyScalar(t));
+}
+
 const Homotopy = ({ s, t }) => {
 
   const dotRef1 = useRef();
@@ -15,20 +29,7 @@ const Homotopy = ({ s, t }) => {
   const f_positions = [];
   const g_positions = [];
   const H_positions = [];
-  
-  const loop_f = (s) => {
-    const angle = s * Math.PI * 2;
-    return new THREE.Vector3(Math.cos(angle), 0, Math.sin(angle));
-  };
 
-  const loop_g = (s) => {
-    const angle = s * Math.PI * 2;
-    return new THREE.Vector3(Math.cos(angle), Math.sin(angle), 0);
-  };
-
-  const homotopy = (s, t) => {
-    return new THREE.Vector3().addVectors(loop_f(s).clone().multiplyScalar(1 - t), loop_g(s).clone().multiplyScalar(t));
-  }
 
   for (let i = 0; i <= numPoints; i++) {
     const u = i / 1000;

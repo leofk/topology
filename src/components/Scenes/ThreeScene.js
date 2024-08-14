@@ -1,6 +1,6 @@
 // src/components/Scenes/ThreeScene.js
 import React, { useState, useMemo } from 'react';
-import { Canvas } from '@react-three/fiber';
+import { Canvas, invalidate } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { CartesianAxis } from '../Helpers/CartesianAxis';
 import Box from '@mui/material/Box';
@@ -11,8 +11,10 @@ import { ReactComponent as MIcon } from '../../other/icons/letter-m.svg';
 import { ReactComponent as NIcon } from '../../other/icons/letter-n.svg'; 
 import CustomSlider from '../Helpers/CustomSlider';
 import KeyComponent from '../Helpers/KeyComponent';
+import Homomorphism, {path_mn, loop_mn, w_m, w_m_tilde} from '../Circle/Homomorphism';
+import {loop_f, loop_g, homotopy} from '../Loops/Homotopy';
 
-const ThreeScene = ({ label, Component, hasSecondSlider = false, hasIntegerChoice = false, hasSecondInteger = false, keyComponents = [] }) => {
+const ThreeScene = ({ label, Component, hasSecondSlider = false, hasIntegerChoice = false, hasSecondInteger = false}) => {
   const [sliderValueS, setSliderValueS] = useState(0);
   const [sliderValueT, setSliderValueT] = useState(0);
   const [integerValue, setIntegerValue] = useState(0); 
@@ -50,40 +52,86 @@ const ThreeScene = ({ label, Component, hasSecondSlider = false, hasIntegerChoic
 
   const keyComponentMap = {
     CM: [
-      { 
-        color: 'red', 
-        label: `\\omega_{${integerValue}}(${sliderValueS})=(${Math.cos(2 * Math.PI * integerValue * sliderValueS).toFixed(2)}, ${Math.sin(2 * Math.PI * integerValue * sliderValueS).toFixed(2)})`
-      },
       {
-        color: 'blue', 
-        label: `\\widetilde{\\omega_{${integerValue}}}=${integerValue * sliderValueS}`
-      },
+        color: 'red',
+        label: String.raw`
+          \omega_{${integerValue}}\left(${sliderValueS.toFixed(2)}\right) 
+          = \left(${w_m(sliderValueS, integerValue).x.toFixed(2)},  
+          ${w_m(sliderValueS, integerValue).z.toFixed(2)}\right)
+        `        
+      },          
       {
-        color: 'green', 
-        label: `p(${integerValue * sliderValueS})=(${Math.cos(2 * Math.PI * integerValue * sliderValueS).toFixed(2)}, ${Math.sin(2 * Math.PI * integerValue * sliderValueS).toFixed(2)})`,
+        color: 'blue',
+        label: String.raw`
+          \widetilde{\omega_{${integerValue}}}\left(${sliderValueS.toFixed(2)}\right) 
+          = ${(w_m_tilde(sliderValueS, integerValue)).toFixed(2)}
+        `
+      },    
+      {
+        color: 'orange', 
+        label: String.raw`
+          p\left(${(w_m_tilde(sliderValueS, integerValue)).toFixed(2)}\right)
+          = \left(${w_m(sliderValueS, integerValue).x.toFixed(2)},  
+          ${w_m(sliderValueS, integerValue).z.toFixed(2)}\right)
+        `
       }
     ],
     HM: [
-      { 
-        color: 'red', 
-        label: `\\omega_{${integerValue + integerValueM}}(${sliderValueS})=(${Math.cos(2 * Math.PI * (integerValue + integerValueM) * sliderValueS).toFixed(2)}, ${Math.sin(2 * Math.PI * (integerValue + integerValueM) * sliderValueS).toFixed(2)})`,
-      },
       {
-        color: 'blue', 
-        label: `\\widetilde{\\omega_{${integerValue + integerValueM}}}=${(integerValue + integerValueM) * sliderValueS}`
-      },
+        color: 'red',
+        label: String.raw`
+          \omega_{${integerValueM}${integerValue >= 0 ? '+' : ''}${integerValue}}\left(${sliderValueS.toFixed(2)}\right) 
+          = \left(${loop_mn(sliderValueS, integerValueM, integerValue).x.toFixed(2)},  
+          ${loop_mn(sliderValueS, integerValueM, integerValue).z.toFixed(2)}\right)
+        `        
+      },          
       {
-        color: 'green', 
-        label: `p(${(integerValue + integerValueM) * sliderValueS})=(${Math.cos(2 * Math.PI * (integerValue + integerValueM) * sliderValueS).toFixed(2)}, ${Math.sin(2 * Math.PI * (integerValue + integerValueM) * sliderValueS).toFixed(2)})`
+        color: 'blue',
+        label: String.raw`
+          \widetilde{\omega_{${integerValueM}${integerValue >= 0 ? '+' : ''}${integerValue}}}\left(${sliderValueS.toFixed(2)}\right) 
+          = ${(path_mn(sliderValueS, integerValueM, integerValue)).toFixed(2)}
+        `
+      },    
+      {
+        color: 'orange', 
+        label: String.raw`
+          p\left(${(path_mn(sliderValueS, integerValueM, integerValue)).toFixed(2)}\right)
+          = \left(${loop_mn(sliderValueS, integerValueM, integerValue).x.toFixed(2)},  
+          ${loop_mn(sliderValueS, integerValueM, integerValue).z.toFixed(2)}\right)
+        `
       }
     ],
     Loop: [
       { color: 'red', label: 'f' } 
     ],
     Homotopy: [
-      { color: 'red', label: 'f' },
-      { color: 'blue', label: 'g' },
-      { color: 'green', label: 'H' },
+      {
+        color: 'red',
+        label: String.raw`
+          f\left(${sliderValueS.toFixed(2)}\right) 
+          = \left(${loop_f(sliderValueS).x.toFixed(2)},  
+          ${loop_f(sliderValueS).z.toFixed(2)},
+          ${loop_f(sliderValueS).y.toFixed(2)}\right)
+        `        
+      },          
+      {
+        color: 'blue',
+        label: String.raw`
+          g\left(${sliderValueS.toFixed(2)}\right) 
+          = \left(${loop_g(sliderValueS).x.toFixed(2)},  
+          ${loop_g(sliderValueS).z.toFixed(2)},
+          ${loop_g(sliderValueS).y.toFixed(2)}\right)
+        `        
+      },  
+      {
+        color: 'green', 
+        label: String.raw`
+          H\left(${sliderValueS.toFixed(2)}, ${sliderValueT.toFixed(2)} \right) 
+          = \left(${homotopy(sliderValueS,sliderValueT).x.toFixed(2)},  
+          ${homotopy(sliderValueS,sliderValueT).z.toFixed(2)},
+          ${homotopy(sliderValueS,sliderValueT).y.toFixed(2)}\right)
+        `      
+      }
     ],
     Class : [
       { color: 'red', label: 'f' },
@@ -93,25 +141,9 @@ const ThreeScene = ({ label, Component, hasSecondSlider = false, hasIntegerChoic
       { color: 'green', label: 'B' },
       { color: 'orange', label: 'C' },
     ],
-    PathPro: [
-      { color: 'red', label: 'f \\cdot g' },
-    ],
-    Identity: [
-      { color: 'red', label: 'f \\cdot e' },
-      { color: 'blue', label: 'f' },
-      { color: 'green', label: 'H_1' },
-      { color: 'yellow', label: 'H_2' },
-    ],
-    Inverse: [
-      { color: 'red', label: 'f \\cdot \\bar{f}' },
-      { color: 'blue', label: 'e' },
-      { color: 'yellow', label: 'H' },
-    ],
-    Associativity: [
-      { color: 'red', label: 'f \\cdot (g \\cdot h) ' },
-      { color: 'blue', label: ' (f \\cdot g) \\cdot h' },
-      { color: 'green', label: 'H_1' },
-      { color: 'yellow', label: 'H_2' },
+    PathProduct: [
+      { color: 'red', label: 'f' },
+      { color: 'blue', label: 'g' },
     ]
   };
 
@@ -192,7 +224,7 @@ const ThreeScene = ({ label, Component, hasSecondSlider = false, hasIntegerChoic
           </Stack>
         </Box>
       )}
-      <Box sx={{ position: 'absolute', top: 10, left: 10, width: 'auto' }}>
+      <Box sx={{ position: 'absolute', top: 10, left: 20, width: 'auto' }}>
         {dynamicKeyComponents.map((key, index) => (
           <KeyComponent key={index} color={key.color} label={key.label} />
         ))}

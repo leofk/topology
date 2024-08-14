@@ -6,7 +6,7 @@ import ThreeScene from '../components/Scenes/ThreeScene';
 import Markdown from '../components/Helpers/Markdown';
 
 import CoveringMap from '../components/Circle/CoveringMap';
-import Homomorphism from '../components/Circle/Homomorphism';
+import Homomorphism, { path_mn } from '../components/Circle/Homomorphism';
 import HomeButton from '../components/Helpers/HomeButton';
 
 const articleName = 'circle';
@@ -25,7 +25,7 @@ function Circle() {
         <Markdown fileName='homomorphism' articleName={articleName}/>
       </Element>
       <Element name="tjs" className="section" id="tjs">
-        <ThreeScene label='HM' Component={Homomorphism} hasIntegerChoice={true} hasSecondInteger={true} />
+        <ThreeScene label='HM' Component={Homomorphism} hasIntegerChoice={true} hasSecondInteger={true} path_mn={path_mn} />
       </Element>
       <Element name="md" className="section" id="md">
         <Markdown fileName='facts' articleName={articleName}/>

@@ -3,13 +3,6 @@ import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import Helix from './Helix'; // Import the Helix component
 
-const Homomorphism = ({ s, n, m }) => {
-  const wnRef = useRef();
-  const wntildeRef = useRef();
-  const loopRef = useRef();
-  const pathRef = useRef();
-  const projectRef = useRef();
-
   // helix path
   // s \in [0, ns]
   const helix = (s) => {
@@ -20,7 +13,6 @@ const Homomorphism = ({ s, n, m }) => {
     return new THREE.Vector3(x, y, z);
   };
 
-
   // covering map from R to S1
   const p = (s) => {
     const angle = 2 * Math.PI * s;
@@ -28,58 +20,64 @@ const Homomorphism = ({ s, n, m }) => {
   };
 
   // a translation on R by m
-  const tau_m = (s) => {
+  const tau_m = (s, m) => {
     return s + m;
   };
 
   // a path in R from 0 to n
-  const w_n_tilde = (s) => {
+  const w_n_tilde = (s, n) => {
     return n * s;
   };
 
   // a path in R from 0 to m
-  const w_m_tilde = (s) => {
+  export const w_m_tilde = (s, m) => {
     return m * s;
   };
 
   // a path in R from 0 to x
-  const path_x = (x, s) => {
+  const path_x = (s, x) => {
     return x * s;
   };
 
   // a path in R from 0 to m+n. 
-  const path_mn = (s) => {
+  export const path_mn = (s, m, n) => {
     if (s <= 1/2) {
-      return w_m_tilde(2*s);
+      return w_m_tilde(2*s, m);
     } else {
-      return tau_m(w_n_tilde(2*s-1));
+      return tau_m(w_n_tilde(2*s-1, n), m);
     }
   };
 
   // a loop in S1 that travels m times. 
-  const w_m = (s) => {
-    return p(w_m_tilde(s));
+  export const w_m = (s, m) => {
+    return p(w_m_tilde(s, m));
   };
 
   // a loop in S1 that travels x times. 
-  const loop_x = (x, s) => {
-    return p(path_x(x, s));
+  const loop_x = (s, x) => {
+    return p(path_x(s, x));
   };
 
   // a loop in S1 that travels from m to n+m (n times)
-  const w_nplusm = (s) => {
-    return p(tau_m(w_n_tilde(s)));
+  const w_nplusm = (s, m, n) => {
+    return p(tau_m(w_n_tilde(s, n), m));
   };
 
   // a loop in S1 that travels m+n times. 
-  const loop_mn = (s) => {
+  export const loop_mn = (s, m, n) => {
     if (s <= 1/2) {
-      return w_m(2*s);
+      return w_m(2*s, m);
     } else {
-      return w_nplusm(2*s-1);
+      return w_nplusm(2*s-1, m, n);
     }
   };
 
+const Homomorphism = ({ s, n, m }) => {
+  const wnRef = useRef();
+  const wntildeRef = useRef();
+  const loopRef = useRef();
+  const pathRef = useRef();
+  const projectRef = useRef();
 
   let numPoints = Math.floor(s * 1000); 
   const maxPoints = Math.min(500 + Math.floor(Math.abs(m/n) * 500), 1000);
@@ -106,11 +104,11 @@ const Homomorphism = ({ s, n, m }) => {
 
     if (flip) {
       let x = m+n;
-      loop_pos.push(loop_x(x,u));
-      path_pos.push(helix(path_x(x,u)));
+      loop_pos.push(loop_x(u, x));
+      path_pos.push(helix(path_x(u, x)));
     } else {
-      loop_pos.push(loop_mn(u));
-      path_pos.push(helix(path_mn(u)));
+      loop_pos.push(loop_mn(u, m, n));
+      path_pos.push(helix(path_mn(u, m, n)));
     }
   }
   
@@ -121,8 +119,8 @@ const Homomorphism = ({ s, n, m }) => {
     const path = pathRef.current;
     const project = projectRef.current;
 
-    const loopPos = loop_mn(s);
-    const pathPos = helix(path_mn(s));
+    const loopPos = loop_mn(s, m, n);
+    const pathPos = helix(path_mn(s, m, n));
   
     w_n_obj.position.copy(loopPos);
     w_n_tilde_obj.position.copy(pathPos);
@@ -138,21 +136,21 @@ const Homomorphism = ({ s, n, m }) => {
         <sphereGeometry args={[0.015, 16, 16]} />
         <meshPhongMaterial color={'red'} />
       </mesh>
-      <mesh ref={wntildeRef}>
-        <sphereGeometry args={[0.015, 16, 16]} />
-        <meshPhongMaterial color={'blue'} />
-      </mesh>
       <line ref={loopRef}>
         <bufferGeometry />
         <lineBasicMaterial color={'red'} />
       </line>
+      <mesh ref={wntildeRef}>
+        <sphereGeometry args={[0.015, 16, 16]} />
+        <meshPhongMaterial color={'blue'} />
+      </mesh>
       <line ref={pathRef}>
         <bufferGeometry />
         <lineBasicMaterial color={'blue'} />
       </line>
       <line ref={projectRef} >
         <bufferGeometry />
-        <lineBasicMaterial color={'green'} />
+        <lineBasicMaterial color={'darkorange'} />
       </line>
     </group>
   );
