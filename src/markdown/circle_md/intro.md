@@ -2,7 +2,7 @@
 
 One of the foundational results in algebraic topology is the calculation of the fundamental group of the circle, $S^1$, which is shown to be isomorphic to the group of integers $\Z$ under addition. This result not only provides a concrete example of a non-trivial fundamental group but also introduces the concept of covering spaces, a powerful tool in topology. The proof involves analyzing loops in $S^1$ and their relation to paths in the real line, $\R$, thereby establishing a correspondence between the set of homotopy classes of loops and the integers. Through this proof, we gain insight into the algebraic structure underlying the topological space of the circle, paving the way for further exploration into more complex spaces and their fundamental groups.
 
-Before we get into the proof, let us build up some intuition on what we might expect from elements in the fundmental group of the circle. 
+Before we get into the proof, let us build up some intuition on what we might expect from elements in the fundamental group of the circle. 
 
 Suppose we base our loops at $x_0=(1,0)$. An obvious example is the trivial loop, which remains stationary at $(1,0)$ and corresponds to the identity element in the group. More interestingly, we can consider loops that traverse the circle once in a clockwise direction, twice, and so on. The same can be said for counter clockwise rotations. Now these loops appear distinct up to homotopy, but this is a non-trivial observation. For this reason, we call to covering spaces.
 
