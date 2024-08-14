@@ -33,7 +33,7 @@ const PathProduct = ({ s }) => {
     const u = i / 1000;
     if (u < 1/2) {
       fg_positions_red.push(loop_fg(u));
-    } else if (u == 1/2) {
+    } else if (u === 1/2) {
       fg_positions_red.push(loop_fg(u));
       fg_positions_blue.push(loop_fg(u));
     } else {

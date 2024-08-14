@@ -57,7 +57,7 @@ const AxiomScene = ({ label, Axiom, H2, H1 = false, keyComponents = [] }) => {
       // Replace placeholders with dynamic values
       return { color: key.color, label };
     });
-  }, [keyComponentMap, label, sliderValueS]);
+  }, [keyComponentMap, label]);
 
 
   return (

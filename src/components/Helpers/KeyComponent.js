@@ -1,5 +1,4 @@
 import React from 'react';
-import { Typography } from '@mui/material';
 import 'katex/dist/katex.min.css';
 import { InlineMath } from 'react-katex';
 
@@ -13,9 +12,7 @@ const KeyComponent = ({ color, label }) => (
         marginRight: 8,
       }}
     />
-    {/* <Typography variant="body1"> */}
-      <InlineMath math={label} />
-    {/* </Typography> */}
+    <InlineMath math={label} />
   </div>
 );
 

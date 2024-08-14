@@ -1,6 +1,6 @@
 // src/components/Scenes/ThreeScene.js
 import React, { useState, useMemo } from 'react';
-import { Canvas, invalidate } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { CartesianAxis } from '../Helpers/CartesianAxis';
 import Box from '@mui/material/Box';
@@ -11,7 +11,7 @@ import { ReactComponent as MIcon } from '../../other/icons/letter-m.svg';
 import { ReactComponent as NIcon } from '../../other/icons/letter-n.svg'; 
 import CustomSlider from '../Helpers/CustomSlider';
 import KeyComponent from '../Helpers/KeyComponent';
-import Homomorphism, {path_mn, loop_mn, w_m, w_m_tilde} from '../Circle/Homomorphism';
+import {path_mn, loop_mn, w_m, w_m_tilde} from '../Circle/Homomorphism';
 import {loop_f, loop_g, homotopy} from '../Loops/Homotopy';
 
 const ThreeScene = ({ label, Component, hasSecondSlider = false, hasIntegerChoice = false, hasSecondInteger = false}) => {
@@ -80,7 +80,7 @@ const ThreeScene = ({ label, Component, hasSecondSlider = false, hasIntegerChoic
       {
         color: 'red',
         label: String.raw`
-          \omega_{${integerValueM}${integerValue >= 0 ? '+' : ''}${integerValue}}\left(${sliderValueS.toFixed(2)}\right) 
+          \omega_{${integerValueM === 0 && integerValue !== 0 ? '' : integerValueM}${integerValue > 0 && integerValueM !== 0 ? '+' : ''}${integerValue === 0 ? '' : integerValue}}\left(${sliderValueS.toFixed(2)}\right) 
           = \left(${loop_mn(sliderValueS, integerValueM, integerValue).x.toFixed(2)},  
           ${loop_mn(sliderValueS, integerValueM, integerValue).z.toFixed(2)}\right)
         `        
@@ -88,7 +88,7 @@ const ThreeScene = ({ label, Component, hasSecondSlider = false, hasIntegerChoic
       {
         color: 'blue',
         label: String.raw`
-          \widetilde{\omega_{${integerValueM}${integerValue >= 0 ? '+' : ''}${integerValue}}}\left(${sliderValueS.toFixed(2)}\right) 
+          \widetilde{\omega_{${integerValueM === 0 && integerValue !== 0 ? '' : integerValueM}${integerValue > 0 && integerValueM !== 0 ? '+' : ''}${integerValue === 0 ? '' : integerValue}}}\left(${sliderValueS.toFixed(2)}\right) 
           = ${(path_mn(sliderValueS, integerValueM, integerValue)).toFixed(2)}
         `
       },    
@@ -156,7 +156,7 @@ const ThreeScene = ({ label, Component, hasSecondSlider = false, hasIntegerChoic
       // Replace placeholders with dynamic values
       return { color: key.color, label };
     });
-  }, [keyComponentMap, label, sliderValueS, integerValue, integerValueM]);
+  }, [keyComponentMap, label]);
 
   return (
     <Box
