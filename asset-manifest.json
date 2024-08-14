@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/topology/static/css/main.b51911a1.css",
-    "main.js": "/topology/static/js/main.6186e54d.js",
-    "static/js/207.1e873490.chunk.js": "/topology/static/js/207.1e873490.chunk.js",
-    "static/js/254.4d90f085.chunk.js": "/topology/static/js/254.4d90f085.chunk.js",
-    "static/js/622.80b3fc5f.chunk.js": "/topology/static/js/622.80b3fc5f.chunk.js",
+    "main.js": "/topology/static/js/main.370564f0.js",
+    "static/js/207.219ac209.chunk.js": "/topology/static/js/207.219ac209.chunk.js",
+    "static/js/254.2816ab54.chunk.js": "/topology/static/js/254.2816ab54.chunk.js",
+    "static/js/622.7faa89cb.chunk.js": "/topology/static/js/622.7faa89cb.chunk.js",
     "static/js/45.b6f0f539.chunk.js": "/topology/static/js/45.b6f0f539.chunk.js",
     "static/js/519.4232a1dc.chunk.js": "/topology/static/js/519.4232a1dc.chunk.js",
     "static/js/846.f7494e7f.chunk.js": "/topology/static/js/846.f7494e7f.chunk.js",
@@ -14,6 +14,7 @@
     "static/js/194.709e57c1.chunk.js": "/topology/static/js/194.709e57c1.chunk.js",
     "static/js/43.cb3712d9.chunk.js": "/topology/static/js/43.cb3712d9.chunk.js",
     "static/js/705.e8aaef13.chunk.js": "/topology/static/js/705.e8aaef13.chunk.js",
+    "static/js/322.7f144948.chunk.js": "/topology/static/js/322.7f144948.chunk.js",
     "static/js/42.1519654d.chunk.js": "/topology/static/js/42.1519654d.chunk.js",
     "static/js/453.72863088.chunk.js": "/topology/static/js/453.72863088.chunk.js",
     "static/media/loops.png": "/topology/static/media/loops.c488c35305b37b541a26.png",
@@ -81,24 +82,25 @@
     "static/media/KaTeX_Size3-Regular.woff": "/topology/static/media/KaTeX_Size3-Regular.7947224e8a9914fa332b.woff",
     "static/media/associativity.md": "/topology/static/media/associativity.412e0a2b4c1c74867eac.md",
     "static/media/KaTeX_Size3-Regular.woff2": "/topology/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
-    "static/media/inverse.md": "/topology/static/media/inverse.0a9f2db360ec3bbbf0da.md",
-    "static/media/facts.md": "/topology/static/media/facts.3f85d6a47a4ea9cdfc5f.md",
+    "static/media/facts.md": "/topology/static/media/facts.81f933457f790fd41a52.md",
     "static/media/intro.md": "/topology/static/media/intro.dce630566debf57546a4.md",
+    "static/media/inverse.md": "/topology/static/media/inverse.0a9f2db360ec3bbbf0da.md",
+    "static/media/homomorphism.md": "/topology/static/media/homomorphism.d2477491220505614ca9.md",
     "static/media/class.md": "/topology/static/media/class.8d5492a3a73e479b9094.md",
-    "static/media/homomorphism.md": "/topology/static/media/homomorphism.08239af8c240976721c8.md",
     "static/media/letter-m.svg": "/topology/static/media/letter-m.06c4300f7a7315dc173113dbe3f23f44.svg",
     "static/media/homotopy.md": "/topology/static/media/homotopy.df37079d45d360024de5.md",
     "index.html": "/topology/index.html",
     "static/media/letter-n.svg": "/topology/static/media/letter-n.78015e515ab5c90753082e07fd6a4667.svg",
+    "static/media/outro.md": "/topology/static/media/outro.1357759316d39ee0b981.md",
     "static/media/product.md": "/topology/static/media/product.91baf4eb1bffc4fc010c.md",
     "static/media/circle.md": "/topology/static/media/circle.cf92dd02da5ae30b6d71.md",
     "static/media/loops.md": "/topology/static/media/loops.e4652dd6d95d28f07ed0.md",
     "main.b51911a1.css.map": "/topology/static/css/main.b51911a1.css.map",
-    "main.6186e54d.js.map": "/topology/static/js/main.6186e54d.js.map",
+    "main.370564f0.js.map": "/topology/static/js/main.370564f0.js.map",
     "453.72863088.chunk.js.map": "/topology/static/js/453.72863088.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b51911a1.css",
-    "static/js/main.6186e54d.js"
+    "static/js/main.370564f0.js"
   ]
 }
