@@ -69,6 +69,10 @@ function Pione() {
       <Element name="tjs" className="section" id="tjs">
       <AxiomScene label='Associativity' Axiom={Associativity} H2={AssociH2} H1={AssociH1} />
       </Element>
+      <Element name="md" className="section" id="md">
+        <Markdown fileName='outro' articleName={articleName}/>
+      </Element>
+      <HomeButton position='bottom' />
     </div>
   );
 }

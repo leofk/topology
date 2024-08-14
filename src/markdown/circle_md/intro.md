@@ -26,10 +26,7 @@ $
 \end{aligned}
 $
 
-This is the path from 0 to $n$ on $\R$; where $n \in \Z$. 
-
-Using the covering map, we can project this path on $\R$ to a loop on $S^1$ by the following composition
-$\omega_n = p \circ \widetilde{\omega_n}$ 
+This is the path from 0 to $n$ on $\R$; where $n \in \Z$. Using the covering map, we can project this path on $\R$ to a loop on $S^1$ by the following composition $\omega_n = p \circ \widetilde{\omega_n}$ which explicity is
 
 $
 \begin{aligned}
@@ -37,5 +34,5 @@ $
 \end{aligned}
 $
 
-this yield a loop based at $x_0=(1,0)$ and travels clockwise around $S^1$, $n$ times.
+This map yields a loop based at $x_0=(1,0)$ and travels clockwise around $S^1$, $n$ times. In the illustration that follows, we demonstrate the interaction between the aforementioned maps. Note for simplicity, we have restricted $n\in[-5,5]$, however, $n$ can of course be any $\Z$
 

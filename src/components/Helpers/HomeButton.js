@@ -5,9 +5,9 @@ import { styled } from '@mui/material/styles';
 import backButtonImage from '../../other/imgs/cube.png'; // Adjust the path as necessary
 
 // Styled IconButton for the back button with hover effect
-const StyledBackButton = styled(IconButton)({
-  position: 'absolute', // Fixed position to stay in place while scrolling
-  top: 10,
+const StyledBackButton = styled(IconButton)(({ position }) => ({
+  position: 'absolute', // Absolute positioning to place it correctly
+  [position === 'top' ? 'top' : 'bottom']: 10,
   left: 10,
   width: 40,
   height: 40,
@@ -17,15 +17,18 @@ const StyledBackButton = styled(IconButton)({
   '&:hover': {
     opacity: 0.9, // Full opacity on hover
   },
-});
+}));
 
-function HomeButton() {
+// Wrap this component in a parent with relative positioning
+function HomeButton({ position = 'top' }) {
   return (
-    <Link to="/topology">
-      <StyledBackButton>
-        <img src={backButtonImage} alt="Home" style={{ width: '100%', height: '100%' }} />
-      </StyledBackButton>
-    </Link>
+    <div style={{ position: 'relative'}}>
+      <Link to="/topology">
+        <StyledBackButton position={position}>
+          <img src={backButtonImage} alt="Home" style={{ width: '100%', height: '100%' }} />
+        </StyledBackButton>
+      </Link>
+    </div>
   );
 }
 

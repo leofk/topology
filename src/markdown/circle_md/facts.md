@@ -1,20 +1,16 @@
-It remains to show $\Phi$ is bijective. But before we do so, it would be helpful to introduce two important facts about covering maps.
+It remains to show $\Phi$ is bijective. However, before doing so, it would be helpful to introduce two relevant facts about covering maps.
 
 ### 1: Uniquely Lifted loops
 
 Firstly, every loop on $S^1$ has a unique lift onto $\R$ as soon as you fix the basepoint $\widetilde{x_0}$ in $\R$. 
 
-If $f: I \to S^1$ s.t. $f(0)=x_0$ and $\widetilde{x_0} \in p^{-1}(x_0)$
-
-Then there is a unique $\tilde{f}: I \to \R$ s.t. $\tilde{f}(0) = \widetilde{x_0}$
+If $f: I \to S^1$ s.t. $f(0)=x_0$ and $\widetilde{x_0} \in p^{-1}(x_0)$, then there is a unique $\tilde{f}: I \to \R$ s.t. $\tilde{f}(0) = \widetilde{x_0}$
 
 ### 2: Uniquely lifted homotopies
 
 The same can be said for homotopies
 
-If $F: I \times I \to S^1$ s.t. $F(0,t)=x_0$ and $\widetilde{x_0} \in p^{-1}(x_0)$
-
-Then there is a unique $\tilde{F}: I \times I \to \R$ s.t. $\tilde{F}(0,t) = \widetilde{x_0}$
+If $F: I \times I \to S^1$ s.t. $F(0,t)=x_0$ and $\widetilde{x_0} \in p^{-1}(x_0)$, then there is a unique $\widetilde{F}: I \times I \to \R$ s.t. $\widetilde{F}(0,t) = \widetilde{x_0}$
 
 ## $\Phi$ is bijective
 
@@ -22,31 +18,15 @@ Now let us build on these facts to show $\Phi$ is bijective, and thus a group is
 
 ### Surjectivity
 
-Recall $\Phi$ is surjective if
+Recall that $\Phi$ is surjective if for every $[ \omega_n ] \in \pi_1(S^1, x_0)$, there exists an $n \in \mathbb{Z}$ such that $\Phi(n) = [ \omega_n ]$.
 
-$\exists n \in \Z$ s.t. $\Phi(n)=[\omega_n]$
+Suppose $[f] \in \pi_1(S^1, x_0)$. By Fact 1, there is a unique lift $\tilde{f}: I \to \mathbb{R}$ such that $\tilde{f}(0) = \widetilde{x_0}$ once we fix $\widetilde{x_0} = 0$.
 
-Suppose
+The covering map gives $p \circ \tilde{f} = f$. Similarly, $p \circ \tilde{f}(1) = f(1) = x_0$, so $\tilde{f}(1) \in p^{-1}(x_0)$.
 
-$[f] \in \pi_1(S^1,x_0)$
+Since $p^{-1}(x_0) = \mathbb{Z}$, we have $\tilde{f}(1) \in \mathbb{Z}$, and thus $\tilde{f}(1) = n$ for some $n \in \mathbb{Z}$.
 
-Then by fact 1, there is a unique lift
-
-$\tilde{f}: I \to \R$ s.t. $\tilde{f}(0) = \widetilde{x_0}$
-
-once we fix $\widetilde{x_0}=0$
-
-The covermap gives $p \circ \tilde{f} = f$ 
-
-And analagously $p \circ \tilde{f}(1) = f(1) = x_0$
-
-And therefore $\tilde{f}(1) \in p^{-1}(x_0)$
-
-Now since $p^{-1}(x_0) = \Z$
-
-$\tilde{f}(1) \in \Z$ and $\tilde{f}(1) = n$ for some $n \in \Z$
-
-Now trivially
+Now trivially:
 
 $
 \begin{aligned}
@@ -54,47 +34,40 @@ $
 p \circ \tilde{f} &\simeq p \circ \widetilde{\omega_n} \\
 f &\simeq \omega_n \\
 [f] &= [\omega_n] \\
-[f] &= \Phi(n) \\
+[f] &= \Phi(n)
 \end{aligned}
 $
 
-Thus, since $[f]$ is in the image of $\Phi(n)$ for some $n\in \Z$, $\Phi$ is surjective.
+Thus, since $[f]$ is in the image of $\Phi(n)$ for some $n \in \mathbb{Z}$, $\Phi$ is surjective.
 
 ### Injectivity
 
-Recall $\Phi$ is injective if
+Recall that $\Phi$ is injective if
 
-$\Phi(m)=\Phi(n) \implies m=n$ , $\forall m,n \in \Z$
+$
+\Phi(m) = \Phi(n) \implies m = n, \quad \forall m, n \in \mathbb{Z}.
+$
 
-Suppose $\Phi(m)=\Phi(n)$
-
-Then $[\omega_m] = [\omega_n]$
-
-And so $\omega_m \simeq \omega_n $by some homotopy $F: I \times I \to S^1$ such that
+Suppose $\Phi(m) = \Phi(n)$. Then $[ \omega_m ] = [ \omega_n ]$, which implies $\omega_m \simeq \omega_n$ by some homotopy $F: I \times I \to S^1$ such that
 
 $
 \begin{aligned}
-F(s,0) &= \omega_m \\
-F(s,1) &= \omega_n
+F(s, 0) &= \omega_m \\
+F(s, 1) &= \omega_n
 \end{aligned}
 $
 
-Now by fact 2, there is a unique lift
-
-$\tilde{F}: I \times I \to \R$ s.t. $\tilde{F}(0,t) = \widetilde{x_0}$
-
-once we fix $\widetilde{x_0}=0$
-
-Well this implies $\tilde{F}$ is a path homotopy between $\widetilde{\omega_m}$ and $\widetilde{\omega_n}$.
-
-And since homotopies fix endpoints, $\tilde{F}$ tells us $\widetilde{\omega_m}$ and $\widetilde{\omega_n}$ must start at end at 
-the same points on $\R$.
+By Fact 2, there is a unique lift $\widetilde{F}: I \times I \to \mathbb{R}$ such that $\widetilde{F}(0, t) = \widetilde{x_0}$ (once we fix $\widetilde{x_0} = 0$). This implies that $\widetilde{F}$ is a path homotopy between $\widetilde{\omega_m}$ and $\widetilde{\omega_n}$ and since homotopies fix endpoints, $\widetilde{F}$ shows that $\widetilde{\omega_m}$ and $\widetilde{\omega_n}$ must start and end at the same points on $\mathbb{R}$:
 
 $
 \begin{aligned}
-\tilde{F}(1,t)&=\tilde{F}(1,0)=m \\
-&= \tilde{F}(1,1)=n
+\widetilde{F}(1, 0) &= m \\
+\widetilde{F}(1, 1) &= n
 \end{aligned}
 $
 
-Thus, since $\Phi(m)=\Phi(n) \implies m=n$, $\Phi$ is injective.
+Thus, $m = n$ when $\Phi(m) = \Phi(n)$ and so $\Phi$ is injective.
+
+## Putting It All Together
+
+Since we have demonstrated that $\Phi$ is both *surjective* and *injective*, it follows that $\Phi$ is *bijective*. Furthermore, because $\Phi$ is a *bijective homomorphism*, it is an *isomorphism*. Thus, we conclude that the fundamental group of the circle $S^1$ is isomorphic to the integers $\Z$.

@@ -30,6 +30,7 @@ function Circle() {
       <Element name="md" className="section" id="md">
         <Markdown fileName='facts' articleName={articleName}/>
       </Element>
+      <HomeButton position='bottom' />
     </div>
   );
 }
