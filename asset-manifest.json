@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/topology/static/css/main.b51911a1.css",
-    "main.js": "/topology/static/js/main.78ea0b51.js",
-    "static/js/207.219ac209.chunk.js": "/topology/static/js/207.219ac209.chunk.js",
+    "main.js": "/topology/static/js/main.5aa9a81e.js",
+    "static/js/207.e168f1ac.chunk.js": "/topology/static/js/207.e168f1ac.chunk.js",
     "static/js/254.26f27c1e.chunk.js": "/topology/static/js/254.26f27c1e.chunk.js",
-    "static/js/622.589053e2.chunk.js": "/topology/static/js/622.589053e2.chunk.js",
+    "static/js/622.68e12e4b.chunk.js": "/topology/static/js/622.68e12e4b.chunk.js",
     "static/js/45.b6f0f539.chunk.js": "/topology/static/js/45.b6f0f539.chunk.js",
     "static/js/519.4232a1dc.chunk.js": "/topology/static/js/519.4232a1dc.chunk.js",
     "static/js/846.f7494e7f.chunk.js": "/topology/static/js/846.f7494e7f.chunk.js",
@@ -82,7 +82,7 @@
     "static/media/KaTeX_Size3-Regular.woff": "/topology/static/media/KaTeX_Size3-Regular.7947224e8a9914fa332b.woff",
     "static/media/associativity.md": "/topology/static/media/associativity.412e0a2b4c1c74867eac.md",
     "static/media/KaTeX_Size3-Regular.woff2": "/topology/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
-    "static/media/facts.md": "/topology/static/media/facts.81f933457f790fd41a52.md",
+    "static/media/facts.md": "/topology/static/media/facts.223d1d653a5e79266a97.md",
     "static/media/intro.md": "/topology/static/media/intro.dce630566debf57546a4.md",
     "static/media/inverse.md": "/topology/static/media/inverse.0a9f2db360ec3bbbf0da.md",
     "static/media/homomorphism.md": "/topology/static/media/homomorphism.fc20e67fcf2c8390d1ed.md",
@@ -96,11 +96,11 @@
     "static/media/circle.md": "/topology/static/media/circle.cf92dd02da5ae30b6d71.md",
     "static/media/loops.md": "/topology/static/media/loops.e4652dd6d95d28f07ed0.md",
     "main.b51911a1.css.map": "/topology/static/css/main.b51911a1.css.map",
-    "main.78ea0b51.js.map": "/topology/static/js/main.78ea0b51.js.map",
+    "main.5aa9a81e.js.map": "/topology/static/js/main.5aa9a81e.js.map",
     "453.72863088.chunk.js.map": "/topology/static/js/453.72863088.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b51911a1.css",
-    "static/js/main.78ea0b51.js"
+    "static/js/main.5aa9a81e.js"
   ]
 }
