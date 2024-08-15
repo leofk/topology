@@ -8,6 +8,7 @@ import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import CustomSlider from '../Helpers/CustomSlider';
 import KeyComponent from '../Helpers/KeyComponent'; 
+import Tooltip from '@mui/material/Tooltip';
 
 const AxiomScene = ({ label, Axiom, H2, H1 = false, keyComponents = [] }) => {
   const [sliderValueS, setSliderValueS] = useState(0);
@@ -93,7 +94,9 @@ const AxiomScene = ({ label, Axiom, H2, H1 = false, keyComponents = [] }) => {
 
       <Box sx={{ width: '85%', margin: '10px 0' }}>
         <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
-          <DirectionsRunIcon />
+          <Tooltip title="distance (s)">
+            <DirectionsRunIcon />
+          </Tooltip>
           <CustomSlider
             value={sliderValueS}
             onChange={handleSliderChangeS}
@@ -103,7 +106,9 @@ const AxiomScene = ({ label, Axiom, H2, H1 = false, keyComponents = [] }) => {
 
       <Box sx={{ width: '85%', margin: '10px 0' }}>
         <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
-          <AccessTimeIcon />
+          <Tooltip title="time (t)">
+            <AccessTimeIcon />
+          </Tooltip>
           <CustomSlider
             value={sliderValueT}
             onChange={handleSliderChangeT}

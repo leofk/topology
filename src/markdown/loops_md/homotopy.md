@@ -2,7 +2,7 @@
 
 A **homotopy** between paths $f$ and $g$ is a continuous family of maps 
 
-$H:\underset{s}{I} \underset{\times}{\times} \underset{t}{I} \underset{\mapsto}{\to} \underset{H(s,t)}{X}$ 
+$H:\underset{s}{I} \underset{\times}{\times} \underset{t}{I} \underset{\mapsto}{\longrightarrow} \underset{H(s,t)}{X}$ 
 
 such that
 

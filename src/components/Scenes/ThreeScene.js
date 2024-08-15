@@ -13,6 +13,7 @@ import CustomSlider from '../Helpers/CustomSlider';
 import KeyComponent from '../Helpers/KeyComponent';
 import {path_mn, loop_mn, w_m, w_m_tilde} from '../Circle/Homomorphism';
 import {loop_f, loop_g, homotopy} from '../Loops/Homotopy';
+import Tooltip from '@mui/material/Tooltip';
 
 const ThreeScene = ({ label, Component, hasSecondSlider = false, hasIntegerChoice = false, hasSecondInteger = false}) => {
   const [sliderValueS, setSliderValueS] = useState(0);
@@ -174,7 +175,9 @@ const ThreeScene = ({ label, Component, hasSecondSlider = false, hasIntegerChoic
       </Canvas>
       <Box sx={{ width: '85%', margin: '10px 0' }}>
         <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
-          <DirectionsRunIcon />
+          <Tooltip title="distance (s)">
+            <DirectionsRunIcon />
+          </Tooltip>
           <CustomSlider
             value={sliderValueS}
             onChange={handleSliderChangeS}
@@ -184,7 +187,9 @@ const ThreeScene = ({ label, Component, hasSecondSlider = false, hasIntegerChoic
       {hasSecondSlider && (
         <Box sx={{ width: '85%', margin: '10px 0' }}>
           <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
-            <AccessTimeIcon />
+            <Tooltip title="time (t)">
+              <AccessTimeIcon />
+            </Tooltip>
             <CustomSlider
               value={sliderValueT}
               onChange={handleSliderChangeT}
@@ -195,7 +200,9 @@ const ThreeScene = ({ label, Component, hasSecondSlider = false, hasIntegerChoic
       {hasIntegerChoice && hasSecondInteger && (
         <Box sx={{ width: '85%', margin: '10px 0' }}>
           <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
-            <MIcon style={{ width: 24, height: 24 }} />
+            <Tooltip title="integer (m)">
+              <MIcon style={{ width: 24, height: 24 }} />
+            </Tooltip>
             <CustomSlider
               value={integerValueM}
               min={-5}
@@ -211,7 +218,9 @@ const ThreeScene = ({ label, Component, hasSecondSlider = false, hasIntegerChoic
       {hasIntegerChoice && (
         <Box sx={{ width: '85%', margin: '10px 0' }}>
           <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
-            <NIcon style={{ width: 24, height: 24 }} />
+            <Tooltip title="integer (m)">
+              <NIcon style={{ width: 24, height: 24 }} />
+            </Tooltip>
             <CustomSlider
               value={integerValue}
               min={-5}

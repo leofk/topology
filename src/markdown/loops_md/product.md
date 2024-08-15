@@ -1,6 +1,6 @@
 ### Path Concatenation
 
-Given two paths $f,g:I \underset{\mapsto}{\to} X$ such that $f(1)=g(0)$, we
+Given two paths $f,g:I \underset{\mapsto}{\longrightarrow} X$ such that $f(1)=g(0)$, we
 call the operation $f \cdot g$ a **path concatenation** or **product path**. This operation defines a map that
 first traverse $f$, and then $g$. In particular, both paths are traversed twice as fast so that $f \cdot g$ completes in $I$.
 

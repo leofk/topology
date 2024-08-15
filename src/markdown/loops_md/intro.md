@@ -8,7 +8,7 @@ This exploration aims to illustrate how the fundamental group satisfies the grou
 
 A **path** in a space $X$ is defined by the map 
 
-$f:\underset{s}{I} \underset{\mapsto}{\to} \underset{f(s)}{X}$ 
+$f:\underset{s}{I} \underset{\mapsto}{\longrightarrow} \underset{f(s)}{X}$ 
 
 where $I$ is the unit interval $[0,1]$. 
 

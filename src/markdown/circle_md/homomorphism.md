@@ -31,7 +31,7 @@ $
 
 Now $\widetilde{\omega_{m+n}}$ is the path in $\R$ that goes from 0 to $m+n$. Well we can rewrite this in terms of $\widetilde{\omega_m}$ which and $\widetilde{\omega_n}$ by concatenating them, but we need to make a slight modification so the endpoints agree. In particular, what we need is for $\widetilde{\omega_n}$, which current starts at 0, to instead start at $m$. Thus it would helpful it would could translate $\widetilde{\omega_n}$ by $m$. Let $\tau_m$ be such a translation.
 
-$\tau_m:\underset{s}{\R} \underset{\mapsto}{\to} \underset{s+m}{\R}$ 
+$\tau_m:\underset{s}{\R} \underset{\mapsto}{\longrightarrow} \underset{s+m}{\R}$ 
 
 The composition $\tau_m \circ \widetilde{\omega_n}$ is the path that goes from $m$ and ends at $m+n$. And so now we can concatenate this with $\widetilde{\omega_m}$ to produce $\widetilde{\omega_m} \cdot (\tau_m \circ \widetilde{\omega_n})$; the path in $\R$ that goes from 0 to $m+n$. 
 
