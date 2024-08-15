@@ -1,12 +1,14 @@
-It remains to show $\Phi$ is bijective. However, before doing so, it would be helpful to introduce two relevant facts about covering maps.
+## Facts about Covering Spaces 
 
-### 1: Uniquely Lifted loops
+It remains to show $\Phi$ is bijective. However, before doing so, it would be helpful to introduce two key facts about covering maps.
+
+### 1: Uniquely Lifted Loops
 
 Firstly, every loop on $S^1$ has a unique lift onto $\R$ as soon as you fix the basepoint $\widetilde{x_0}$ in $\R$. 
 
 If $f: I \to S^1$ s.t. $f(0)=x_0$ and $\widetilde{x_0} \in p^{-1}(x_0)$, then there is a unique $\tilde{f}: I \to \R$ s.t. $\tilde{f}(0) = \widetilde{x_0}$
 
-### 2: Uniquely lifted homotopies
+### 2: Uniquely Lifted Homotopies
 
 The same can be said for homotopies
 
