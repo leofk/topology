@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkexperiment=self.webpackChunkexperiment||[]).push([[194],{8194:(e,p,t)=>{e.exports=t.p+"static/media/homotopy.bbbdf6199a33fdbf1c39.md"}}]);
