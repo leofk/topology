@@ -24,7 +24,7 @@ Recall that $\Phi$ is surjective if for every $[ \omega_n ] \in \pi_1(S^1, x_0)$
 
 Suppose $[f] \in \pi_1(S^1, x_0)$. By Fact 1, there is a unique lift $\tilde{f}: I \to \mathbb{R}$ such that $\tilde{f}(0) = \widetilde{x_0}$ once we fix $\widetilde{x_0} = 0$.
 
-The covering map gives $p \circ \tilde{f} = f$. And similarly, $p \circ \tilde{f}(1) = f(1) = x_0$, so $\tilde{f}(1) \in p^{-1}(x_0)$. Since $p^{-1}(x_0) = \mathbb{Z}$, we have $\tilde{f}(1) \in \mathbb{Z}$, and thus $\tilde{f}(1) = n$ for some $n \in \mathbb{Z}$. This tells us $\tilde{f}\simeq \widetilde{\omega_n}$ since it is a path in $\R$ that goes from $0$ to $n$. Thus trivally
+The covering map gives $p \circ \tilde{f} = f$. And similarly, $p \circ \tilde{f}(1) = f(1) = f(0) = x_0$, so $\tilde{f}(1) \in p^{-1}(x_0)$. Since $p^{-1}(x_0) = \mathbb{Z}$, we have $\tilde{f}(1) \in \mathbb{Z}$, and thus $\tilde{f}(1) = n$ for some $n \in \mathbb{Z}$. This tells us $\tilde{f}\simeq \widetilde{\omega_n}$ since it is a path in $\R$ that goes from $0$ to $n$. Thus trivally
 
 $
 \begin{aligned}
