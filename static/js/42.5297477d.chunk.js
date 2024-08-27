@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkexperiment=self.webpackChunkexperiment||[]).push([[42],{7042:(e,p,t)=>{e.exports=t.p+"static/media/product.f69e233979006d89b600.md"}}]);
