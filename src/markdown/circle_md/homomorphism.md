@@ -48,8 +48,8 @@ Now trivially $p \circ (\widetilde{\omega_m})=\omega_m$, but it is also the case
 $
 \begin{aligned}
 [(p \circ \widetilde{\omega_m}) \cdot (p \circ (\tau_m \circ \widetilde{\omega_n}))] 
- &= [w_m \cdot \omega_n] \\
- &= [w_m] \cdot [\omega_n] \\
+ &= [\omega_m \cdot \omega_n] \\
+ &= [\omega_m] \cdot [\omega_n] \\
  &= \Phi(m) \cdot \Phi(n) 
 \end{aligned}
 $
