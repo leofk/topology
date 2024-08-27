@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/topology/static/css/main.b51911a1.css",
-    "main.js": "/topology/static/js/main.b5d91d5b.js",
+    "main.js": "/topology/static/js/main.10db5fbd.js",
     "static/js/207.482b5c4e.chunk.js": "/topology/static/js/207.482b5c4e.chunk.js",
-    "static/js/254.26f27c1e.chunk.js": "/topology/static/js/254.26f27c1e.chunk.js",
+    "static/js/254.556fb646.chunk.js": "/topology/static/js/254.556fb646.chunk.js",
     "static/js/622.ae2bcb73.chunk.js": "/topology/static/js/622.ae2bcb73.chunk.js",
     "static/js/45.b6f0f539.chunk.js": "/topology/static/js/45.b6f0f539.chunk.js",
     "static/js/519.4232a1dc.chunk.js": "/topology/static/js/519.4232a1dc.chunk.js",
@@ -85,7 +85,7 @@
     "static/media/facts.md": "/topology/static/media/facts.9ef706977211095c5a0f.md",
     "static/media/intro.md": "/topology/static/media/intro.dce630566debf57546a4.md",
     "static/media/inverse.md": "/topology/static/media/inverse.0a9f2db360ec3bbbf0da.md",
-    "static/media/homomorphism.md": "/topology/static/media/homomorphism.fc20e67fcf2c8390d1ed.md",
+    "static/media/homomorphism.md": "/topology/static/media/homomorphism.20d7b6457ddb31c46ed5.md",
     "static/media/class.md": "/topology/static/media/class.8d5492a3a73e479b9094.md",
     "static/media/homotopy.md": "/topology/static/media/homotopy.bbbdf6199a33fdbf1c39.md",
     "static/media/letter-m.svg": "/topology/static/media/letter-m.b2f56f7c8c357f708fd977d114144c8b.svg",
@@ -96,11 +96,11 @@
     "static/media/circle.md": "/topology/static/media/circle.cf92dd02da5ae30b6d71.md",
     "static/media/loops.md": "/topology/static/media/loops.e4652dd6d95d28f07ed0.md",
     "main.b51911a1.css.map": "/topology/static/css/main.b51911a1.css.map",
-    "main.b5d91d5b.js.map": "/topology/static/js/main.b5d91d5b.js.map",
+    "main.10db5fbd.js.map": "/topology/static/js/main.10db5fbd.js.map",
     "453.72863088.chunk.js.map": "/topology/static/js/453.72863088.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b51911a1.css",
-    "static/js/main.b5d91d5b.js"
+    "static/js/main.10db5fbd.js"
   ]
 }
